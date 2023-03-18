@@ -1,2 +1,2 @@
 # ArtiClear
-Portfolio
+ブックマーク管理サービス ArtiClearのフロントエンドリポジトリです
