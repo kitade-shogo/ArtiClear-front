@@ -4,6 +4,7 @@ import MyComponent from './Tset';
 function App() {
   return (
     <>
+      <MyComponent />
     </>
   );
 }
