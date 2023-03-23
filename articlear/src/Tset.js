@@ -25,15 +25,19 @@ const MyComponent = () => {
       </p>
       <p
         style={{
-          color: theme.colors.primary
+          color: theme.colors.primary,
         }}
+        className="text-3xl font-bold underline"
       >
-      usingTokens
+        usingTokens
       </p>
       <Button
         style={{
-        color: theme.colors.gradient.value
-      }}>default</Button>
+          color: theme.colors.gradient.value,
+        }}
+      >
+        default
+      </Button>
     </div>
   );
 };
