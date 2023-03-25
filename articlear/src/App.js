@@ -1,6 +1,8 @@
+import { createTheme, NextUIProvider } from '@nextui-org/react'
+import { BrowserRouter } from "react-router-dom";
 import './App.css'
 import RouterConfig from './config/RouterConfig'
-import { createTheme, NextUIProvider } from '@nextui-org/react'
+import TopBar from './components/Topbar'
 
 const theme = createTheme({
     type: 'dark', // it could be "light" or "dark"
@@ -11,12 +13,14 @@ const theme = createTheme({
             primaryLightHover: '$green300',
             primaryLightActive: '$green400',
             primaryLightContrast: '$green600',
-            primary: '#4ADE7B',
+            primary: '#0072F5',
             primaryBorder: '$green500',
             primaryBorderHover: '$green600',
             primarySolidHover: '$green700',
             primarySolidContrast: '$white',
             primaryShadow: '$green500',
+
+            default: '#0072F5',
 
             gradient:
                 'linear-gradient(112deg, $blue100 -25%, $pink500 -10%, $purple500 80%)',
@@ -37,7 +41,10 @@ function App() {
     return (
         <>
             <NextUIProvider theme={theme}>
-                <RouterConfig />
+                <BrowserRouter>
+                    <TopBar />
+                    <RouterConfig />
+                </BrowserRouter>
             </NextUIProvider>
         </>
     )
