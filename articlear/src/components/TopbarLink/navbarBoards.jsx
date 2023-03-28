@@ -1,15 +1,16 @@
-import { useLocation } from 'react-router-dom'
-import { Navbar } from '@nextui-org/react'
+import { useLocation, Link } from 'react-router-dom'
 
 const NavbarBoards = () => {
     const path = useLocation().pathname
 
     return path === '/boards' ? (
-        <Navbar.Link isActive href="/boards">
+        <Link style={{ color: '#0072F5' }} to="/boards">
             Boards
-        </Navbar.Link>
+        </Link>
     ) : (
-        <Navbar.Link href="/boards">Boards</Navbar.Link>
+        <Link style={{ color: 'white' }} to="/boards">
+            Boards
+        </Link>
     )
 }
 

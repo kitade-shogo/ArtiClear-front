@@ -20,7 +20,6 @@ const TopBar = () => {
                 </Text>
             </Navbar.Brand>
             <Navbar.Content
-                activeColor="primary"
                 hideIn="xs"
                 variant="default"
                 gap="$20"

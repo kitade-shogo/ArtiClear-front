@@ -1,15 +1,16 @@
-import { useLocation } from 'react-router-dom'
-import { Navbar } from '@nextui-org/react'
+import { useLocation, Link } from 'react-router-dom'
 
 const NavbarCalender = () => {
     const path = useLocation().pathname
 
     return path === '/calender' ? (
-        <Navbar.Link isActive href="/calender">
+        <Link style={{ color: '#0072F5' }} to="/calender">
             Calender
-        </Navbar.Link>
+        </Link>
     ) : (
-        <Navbar.Link href="/calender">Calender</Navbar.Link>
+        <Link style={{ color: 'white' }} to="/calender">
+            Calender
+        </Link>
     )
 }
 
