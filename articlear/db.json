@@ -1,0 +1,36 @@
+{
+    "users": [
+        {
+            "id": "1",
+            "name": "Kitade",
+            "profile": "RUNTEQ34期生"
+        },
+        {
+            "id": "2",
+            "name": "Rotomu",
+            "profile": "電気タイプ"
+        },
+        {
+            "id": "3",
+            "name": "React",
+            "profile": "JavaScriptフレームワーク"
+        }
+    ],
+    "bookmarks": [
+        {
+            "id": "1",
+            "link": "https://github.com/kitade-shogo",
+            "user_id": "1"
+        },
+        {
+            "id": "2",
+            "link": "https://zukan.pokemon.co.jp/detail/0479",
+            "user_id": "2"
+        },
+        {
+            "id": "3",
+            "link": "https://ja.reactjs.org/",
+            "user_id": "3"
+        }
+    ]
+}
