@@ -1,5 +1,5 @@
 import { createTheme, NextUIProvider } from '@nextui-org/react'
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from 'react-router-dom'
 import './App.css'
 import RouterConfig from './config/RouterConfig'
 import TopBar from './components/Topbar'
@@ -9,22 +9,18 @@ const theme = createTheme({
     theme: {
         colors: {
             // brand colors
-            primaryLight: '$green200',
-            primaryLightHover: '$green300',
-            primaryLightActive: '$green400',
-            primaryLightContrast: '$green600',
-            primary: '#0072F5',
-            primaryBorder: '$green500',
-            primaryBorderHover: '$green600',
-            primarySolidHover: '$green700',
-            primarySolidContrast: '$white',
-            primaryShadow: '$green500',
-
-            default: '#0072F5',
-
-            gradient:
-                'linear-gradient(112deg, $blue100 -25%, $pink500 -10%, $purple500 80%)',
-            link: '#5E1DAD',
+            background1: '#0c1820',
+            background2: '#071d2a',
+            componentBackgroundNormal: '#082636',
+            componentBackgroundHover: '#082d41',
+            componentBackgroundSelected: '#08354c',
+            border: '#083e59',
+            borderInteractive: '#064b6b',
+            borderHover: '#005d85',
+            blue9: '#68ddfd',
+            blue10: '#8ae8ff',
+            textLowContrast: '#2ec8ee',
+            textHighContrast: '#eaf8ff',
 
             // you can also create your own color
             myColor: '#ff4ecd',

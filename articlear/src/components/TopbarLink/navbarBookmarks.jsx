@@ -1,15 +1,20 @@
 import { useLocation, Link } from "react-router-dom";
+import { Text } from "@nextui-org/react";
 
 const NavbarBookmarks = () => {
     const path = useLocation().pathname
     
     return path === '/bookmarks' ? (
-        <Link style={{ color: '#0072F5' }} to="/bookmarks">
-            Bookmarks
+        <Link to="/bookmarks">
+            <Text b css={{ color: '$textLowContrast' }}>
+                Bookmarks
+            </Text>
         </Link>
     ) : (
-        <Link style={{ color: 'white' }} to="/bookmarks">
-            Bookmarks
+        <Link to="/bookmarks">
+            <Text b style={{ color: '#eaf6ff' }}>
+                Bookmarks
+            </Text>
         </Link>
     )
 };

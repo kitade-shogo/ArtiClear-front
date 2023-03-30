@@ -1,15 +1,20 @@
 import { useLocation, Link } from 'react-router-dom'
+import { Text } from '@nextui-org/react'
 
 const NavbarMyPage = () => {
     const path = useLocation().pathname
 
     return path === '/mypage' ? (
-        <Link style={{ color: '#0072F5' }} to="/mypage">
-            MyPage
+        <Link to="/mypage">
+            <Text b css={{ color: '$textLowContrast' }}>
+                MyPage
+            </Text>
         </Link>
     ) : (
-        <Link style={{ color: 'white' }}  to="/mypage">
-            MyPage
+        <Link to="/mypage">
+            <Text b style={{ color: '#eaf6ff' }}>
+                MyPage
+            </Text>
         </Link>
     )
 }

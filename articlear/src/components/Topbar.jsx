@@ -5,14 +5,13 @@ import NavbarCalender from './TopbarLink/navbarCalender';
 import NavbarMyPage from './TopbarLink/navbarMyPage';
 
 const TopBar = () => {
-    const { isDark } = useTheme();
 
     return (
         <Navbar
-            isBordered={isDark}
             variant="sticky"
             height="120px"
             maxWidth="fluid"
+            css={{ background: '$background1' }}
         >
             <Navbar.Brand>
                 <Text b hideIn="xs" size="$3xl">
@@ -20,8 +19,8 @@ const TopBar = () => {
                 </Text>
             </Navbar.Brand>
             <Navbar.Content
+                activeColor={"success"}
                 hideIn="xs"
-                variant="default"
                 gap="$20"
             >
                 <NavbarBookmarks />
