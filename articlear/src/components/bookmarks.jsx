@@ -1,7 +1,7 @@
 const Bookmarks = () => {
     return (
         <>
-            <h1>Bookmarks</h1>
+            <h1 css={{ background: '$background1' }}>Bookmarks</h1>
         </>
     );
 };

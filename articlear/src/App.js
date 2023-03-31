@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom'
 import './App.css'
 import RouterConfig from './config/RouterConfig'
 import TopBar from './components/Topbar'
+import Footer1 from './components/Footer/footer'
 
 const theme = createTheme({
     type: 'dark', // it could be "light" or "dark"
@@ -20,13 +21,7 @@ const theme = createTheme({
             blue9: '#68ddfd',
             blue10: '#8ae8ff',
             textLowContrast: '#2ec8ee',
-            textHighContrast: '#eaf8ff',
-
-            // you can also create your own color
-            myColor: '#ff4ecd',
-
-            // ...  more colors
-            background: '',
+            textHighContrast: '#eaf8ff'
         },
         space: {},
         fonts: {},
@@ -40,6 +35,7 @@ function App() {
                 <BrowserRouter>
                     <TopBar />
                     <RouterConfig />
+                    <Footer1 />
                 </BrowserRouter>
             </NextUIProvider>
         </>
