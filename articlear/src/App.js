@@ -3,25 +3,25 @@ import { BrowserRouter } from 'react-router-dom'
 import './App.css'
 import RouterConfig from './config/RouterConfig'
 import TopBar from './components/Topbar'
-import Footer1 from './components/footer'
+import MyFooter from './components/footer'
 
 const theme = createTheme({
-    type: 'dark', // it could be "light" or "dark"
+    type: 'light', // it could be "light" or "dark"
     theme: {
         colors: {
             // brand colors
-            background1: '#0c1820',
-            background2: '#071d2a',
-            componentBackgroundNormal: '#082636',
-            componentBackgroundHover: '#082d41',
-            componentBackgroundSelected: '#08354c',
-            border: '#083e59',
-            borderInteractive: '#064b6b',
-            borderHover: '#005d85',
-            blue9: '#68ddfd',
-            blue10: '#8ae8ff',
-            textLowContrast: '#2ec8ee',
-            textHighContrast: '#eaf8ff',
+            background1: '#f9feff',
+            background2: '#f1fcff',
+            componentBackgroundNormal: '#e4f9ff',
+            componentBackgroundHover: '#d5f4fd',
+            componentBackgroundSelected: '#c1ecf9',
+            border: '#a4dff1',
+            borderInteractive: '#79cfea',
+            borderHover: '#2ebde5',
+            sky9: '#68ddfd',
+            sky10: '#5fd4f4',
+            textLowContrast: '#0078a1',
+            textHighContrast: '#003242',
         },
         space: {},
         fonts: {},
@@ -35,7 +35,7 @@ function App() {
                 <BrowserRouter>
                     <TopBar />
                     <RouterConfig />
-                    <Footer1 />
+                    <MyFooter />
                 </BrowserRouter>
             </NextUIProvider>
         </>

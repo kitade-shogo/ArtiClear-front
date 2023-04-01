@@ -4,12 +4,12 @@ import MySidebar from "../sidebar";
 const Bookmarks = () => {
     return (
         <>
-            <Container className="bg-background1">
+            <Container fluid>
                 <Text h1>Bookmarks</Text>
                 <MySidebar />
             </Container>
         </>
-    );
+    )
 };
 
 export default Bookmarks;

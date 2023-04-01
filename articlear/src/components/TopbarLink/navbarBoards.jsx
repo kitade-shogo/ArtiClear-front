@@ -1,22 +1,22 @@
 import { useLocation, Link } from 'react-router-dom'
-import { Text } from '@nextui-org/react'
+import { Navbar} from '@nextui-org/react'
 
 const NavbarBoards = () => {
     const path = useLocation().pathname
 
     return path === '/boards' ? (
-        <Link to="/boards">
-            <Text b css={{ color: '$textLowContrast' }}>
+        <Navbar.Link isActive>
+            <Link to="/boards" isActive>
                 Boards
-            </Text>
-        </Link>
+            </Link>
+        </Navbar.Link>
     ) : (
-        <Link to="/boards">
-            <Text b style={{ color: '#eaf6ff' }}>
+        <Navbar.Link>
+            <Link to="/boards" className="text-black">
                 Boards
-            </Text>
-        </Link>
+            </Link>
+        </Navbar.Link>
     )
 }
 
-export default NavbarBoards;
+export default NavbarBoards

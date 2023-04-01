@@ -3,25 +3,23 @@ import { Sidebar } from 'flowbite-react'
 const MySidebar = () => {
     return (
         <>
-            <div className="w-fit">
+            <div className="w-fit bg">
                 <Sidebar aria-label="Default sidebar example">
-                    <Sidebar.Items>
+                    <Sidebar.Items >
                         <Sidebar.ItemGroup>
-                            <Sidebar.Item href="#">Dashboard</Sidebar.Item>
+                            <Sidebar.Item href="#">Ruby</Sidebar.Item>
                             <Sidebar.Item
                                 href="#"
-                                label="Pro"
-                                labelColor="alternative"
+                                label="15"
                             >
-                                Kanban
+                                Rails
                             </Sidebar.Item>
                             <Sidebar.Item href="#" label="3">
-                                Inbox
+                                JavaScript
                             </Sidebar.Item>
-                            <Sidebar.Item href="#">Users</Sidebar.Item>
-                            <Sidebar.Item href="#">Products</Sidebar.Item>
-                            <Sidebar.Item href="#">Sign In</Sidebar.Item>
-                            <Sidebar.Item href="#">Sign Up</Sidebar.Item>
+                            <Sidebar.Item href="#">React</Sidebar.Item>
+                            <Sidebar.Item href="#">Next</Sidebar.Item>
+                            <Sidebar.Item href="#">Python</Sidebar.Item>
                         </Sidebar.ItemGroup>
                     </Sidebar.Items>
                 </Sidebar>

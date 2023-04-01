@@ -12,23 +12,19 @@ const TopBar = () => {
             height="120px"
             isBordered={isDark}
             maxWidth="fluid"
-            css={{ background: '$background1' }}
         >
-            <Navbar.Brand >
+            <Navbar.Brand>
                 <Text b hideIn="xs" size="$3xl">
                     ArtiClear
                 </Text>
             </Navbar.Brand>
-            <Navbar.Content
-                hideIn="xs"
-                gap="$20"
-            >
+            <Navbar.Content hideIn="xs" gap="$20" variant='default'>
                 <NavbarBookmarks />
                 <NavbarCalender />
                 <NavbarBoards />
                 <NavbarMyPage />
             </Navbar.Content>
-            <Navbar.Content >
+            <Navbar.Content>
                 <Navbar.Link href="#">Login</Navbar.Link>
                 <Navbar.Item>
                     <Button auto as={Link} bordered="true" href="#">

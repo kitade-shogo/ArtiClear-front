@@ -1,22 +1,18 @@
 import { useLocation, Link } from 'react-router-dom'
-import { Text } from '@nextui-org/react'
+import { Navbar } from '@nextui-org/react'
 
 const NavbarMyPage = () => {
     const path = useLocation().pathname
 
     return path === '/mypage' ? (
-        <Link to="/mypage">
-            <Text b css={{ color: '$textLowContrast' }}>
-                MyPage
-            </Text>
-        </Link>
+        <Navbar.Link isActive >
+            <Link to="/mypage">MyPage</Link>
+        </Navbar.Link>
     ) : (
-        <Link to="/mypage">
-            <Text b style={{ color: '#eaf6ff' }}>
-                MyPage
-            </Text>
-        </Link>
+            <Navbar.Link>
+            <Link to="/mypage" className='text-black'>MyPage</Link>
+        </Navbar.Link>
     )
 }
 
-export default NavbarMyPage;
+export default NavbarMyPage
