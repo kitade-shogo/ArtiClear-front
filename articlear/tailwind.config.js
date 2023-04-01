@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-const colors = require('tailwindcss/colors')
 module.exports = {
     content: [
         './src/**/*.{js,jsx,ts,tsx}',
@@ -8,18 +7,18 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                'background1': '#0c1820',
-                'background2': '#071d2a',
-                'componentBackgroundNormal': '#082636',
-                'componentBackgroundHover': '#082d41',
-                'componentBackgroundSelected': '#08354c',
-                'border': '#083e59',
-                'borderInteractive': '#064b6b',
-                'borderHover': '#005d85',
-                'blue9': '#68ddfd',
-                'blue10': '#8ae8ff',
-                'textLowContrast': '#2ec8ee',
-                'textHighContrast': '#eaf8ff',
+                background1: '#0c1820',
+                background2: '#071d2a',
+                componentBackgroundNormal: '#082636',
+                componentBackgroundHover: '#082d41',
+                componentBackgroundSelected: '#08354c',
+                border: '#083e59',
+                borderInteractive: '#064b6b',
+                borderHover: '#005d85',
+                blue9: '#68ddfd',
+                blue10: '#8ae8ff',
+                textLowContrast: '#2ec8ee',
+                textHighContrast: '#eaf8ff',
             },
         },
     },
