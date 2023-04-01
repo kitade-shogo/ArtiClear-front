@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
-import Bookmarks from '../components/bookmarks'
-import Calender from '../components/calender'
-import Boards from '../components/boards'
-import MyPage from '../components/myPage'
+import Bookmarks from '../components//pages/bookmarks'
+import Calender from '../components/pages/calender'
+import Boards from '../components/pages/boards'
+import MyPage from '../components/pages/myPage'
 
 const RouterConfig = () => {
     return (

@@ -35,7 +35,7 @@ function App() {
                 <BrowserRouter>
                     <TopBar />
                     <RouterConfig />
-                    <Footer1 className="sticky bottom-0" />
+                    <Footer1 />
                 </BrowserRouter>
             </NextUIProvider>
         </>
