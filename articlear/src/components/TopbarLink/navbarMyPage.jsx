@@ -5,13 +5,13 @@ const NavbarMyPage = () => {
     const path = useLocation().pathname
 
     return path === '/mypage' ? (
-        <Navbar.Link isActive >
+        <Navbar.Item isactive="true" >
             <Link to="/mypage">MyPage</Link>
-        </Navbar.Link>
+        </Navbar.Item>
     ) : (
-            <Navbar.Link>
+            <Navbar.Item>
             <Link to="/mypage" className='text-black'>MyPage</Link>
-        </Navbar.Link>
+        </Navbar.Item>
     )
 }
 

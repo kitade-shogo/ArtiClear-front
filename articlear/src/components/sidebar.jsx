@@ -1,3 +1,4 @@
+import { Button } from '@nextui-org/react'
 import { Sidebar } from 'flowbite-react'
 
 const MySidebar = () => {
@@ -20,6 +21,11 @@ const MySidebar = () => {
                             <Sidebar.Item href="#">React</Sidebar.Item>
                             <Sidebar.Item href="#">Next</Sidebar.Item>
                             <Sidebar.Item href="#">Python</Sidebar.Item>
+                            <Sidebar.Item href="#">
+                                <Button flat auto>
+                                    Add New Folder
+                                </Button>
+                            </Sidebar.Item>
                         </Sidebar.ItemGroup>
                     </Sidebar.Items>
                 </Sidebar>

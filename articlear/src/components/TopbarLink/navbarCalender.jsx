@@ -5,15 +5,17 @@ const NavbarCalender = () => {
     const path = useLocation().pathname
 
     return path === '/calender' ? (
-        <Navbar.Link isActive>
-            <Link to="/calender">Calender</Link>
-        </Navbar.Link>
-    ) : (
-        <Navbar.Link>
-            <Link to="/calender" className="text-black">
-                Calender
+        <Navbar.Item isactive="true">
+            <Link to="/calender">
+                <p className='font-bold'>Calender</p>
             </Link>
-        </Navbar.Link>
+        </Navbar.Item>
+    ) : (
+        <Navbar.Item>
+            <Link to="/calender" className="text-black">
+                <p>Calender</p>
+            </Link>
+        </Navbar.Item>
     )
 }
 

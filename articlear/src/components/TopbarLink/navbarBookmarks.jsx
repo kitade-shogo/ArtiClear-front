@@ -5,15 +5,17 @@ const NavbarBookmarks = () => {
     const path = useLocation().pathname
 
     return path === '/bookmarks' ? (
-        <Navbar.Link isActive>
-            <Link to="/bookmarks">Bookmarks</Link>
-        </Navbar.Link>
-    ) : (
-        <Navbar.Link>
-            <Link to="/bookmarks" className="text-black">
-                Bookmarks
+        <Navbar.Item isactive="true">
+            <Link to="/bookmarks">
+                <p className='font-bold'>Bookmarks</p>
             </Link>
-        </Navbar.Link>
+        </Navbar.Item>
+    ) : (
+        <Navbar.Item>
+            <Link to="/bookmarks" className="text-black">
+                <p>Bookmarks</p>
+            </Link>
+        </Navbar.Item>
     )
 }
 

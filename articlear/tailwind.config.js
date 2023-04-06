@@ -21,6 +21,9 @@ module.exports = {
                 textHighContrast: '#003242',
             },
         },
+        fontFamily: {
+            oswald: ['Oswald', 'sans-serif'],
+        },
     },
     plugins: [require('flowbite/plugin')],
 }

@@ -1,13 +1,10 @@
 import { Footer } from 'flowbite-react'
 
-const MyFooter1 = () => {
+const MyFooter = () => {
     return (
         <>
             <div className="fixed bottom-0 w-full z-50">
-                <Footer
-                    className="rounded-none"
-                    container={true}
-                >
+                <Footer container={true} className="rounded-none h-16">
                     <Footer.Copyright href="#" by="ArtiClear™" year={2023} />
                     <Footer.LinkGroup>
                         <Footer.Link href="#">About</Footer.Link>
@@ -21,4 +18,4 @@ const MyFooter1 = () => {
     )
 }
 
-export default MyFooter1
+export default MyFooter
