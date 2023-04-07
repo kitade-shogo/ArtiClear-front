@@ -1,17 +1,22 @@
 import { useLocation, Link } from 'react-router-dom'
+import { Navbar } from '@nextui-org/react'
 
 const NavbarCalender = () => {
     const path = useLocation().pathname
 
     return path === '/calender' ? (
-        <Link style={{ color: '#0072F5' }} to="/calender">
-            Calender
-        </Link>
+        <Navbar.Item isactive="true">
+            <Link to="/calender">
+                <p className='font-bold'>Calender</p>
+            </Link>
+        </Navbar.Item>
     ) : (
-        <Link style={{ color: 'white' }} to="/calender">
-            Calender
-        </Link>
+        <Navbar.Item>
+            <Link to="/calender" className="text-black">
+                <p className='font-medium'>Calender</p>
+            </Link>
+        </Navbar.Item>
     )
 }
 
-export default NavbarCalender;
+export default NavbarCalender

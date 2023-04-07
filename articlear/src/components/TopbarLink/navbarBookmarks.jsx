@@ -1,17 +1,22 @@
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link } from 'react-router-dom'
+import { Navbar } from '@nextui-org/react'
 
 const NavbarBookmarks = () => {
     const path = useLocation().pathname
-    
-    return path === '/bookmarks' ? (
-        <Link style={{ color: '#0072F5' }} to="/bookmarks">
-            Bookmarks
-        </Link>
-    ) : (
-        <Link style={{ color: 'white' }} to="/bookmarks">
-            Bookmarks
-        </Link>
-    )
-};
 
-export default NavbarBookmarks;
+    return path === '/bookmarks' ? (
+        <Navbar.Item isactive="true">
+            <Link to="/bookmarks">
+                <p className='font-bold'>Bookmarks</p>
+            </Link>
+        </Navbar.Item>
+    ) : (
+        <Navbar.Item>
+            <Link to="/bookmarks" className="text-black">
+                <p className='font-medium'>Bookmarks</p>
+            </Link>
+        </Navbar.Item>
+    )
+}
+
+export default NavbarBookmarks
