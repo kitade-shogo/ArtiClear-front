@@ -13,7 +13,7 @@ const NavbarBookmarks = () => {
     ) : (
         <Navbar.Item>
             <Link to="/bookmarks" className="text-black">
-                <p>Bookmarks</p>
+                <p className='font-medium'>Bookmarks</p>
             </Link>
         </Navbar.Item>
     )

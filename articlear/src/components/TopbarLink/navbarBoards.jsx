@@ -13,7 +13,7 @@ const NavbarBoards = () => {
     ) : (
         <Navbar.Item>
             <Link to="/boards" className="text-black">
-                <p>Boards</p>
+                <p className='font-medium'>Boards</p>
             </Link>
         </Navbar.Item>
     )

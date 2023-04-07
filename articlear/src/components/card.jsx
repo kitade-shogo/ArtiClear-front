@@ -1,6 +1,15 @@
-import { Card, Text, Row, Button, Spacer, Grid } from '@nextui-org/react'
+import { useState } from 'react'
+import { Card, Text, Row, Button, Spacer, Grid, Modal, Input, Textarea } from '@nextui-org/react'
 
 const MyCard = () => {
+    const [visible, setVisible] =useState(false)
+    const handler = () => setVisible(true)
+
+    const closeHandler = () => {
+        setVisible(false)
+        console.log('closed')
+    }
+
     return (
         <>
             <Spacer y={1} />
@@ -21,9 +30,40 @@ const MyCard = () => {
                             <Text>Fisrt sentence of the website....</Text>
                         </Grid>
                         <Row justify="flex-end">
-                            <Button size="sm" bordered>
+                            <Button size="sm" bordered onPress={handler}>
                                 Share
                             </Button>
+                            <Modal
+                                closeButton
+                                aria-labelledby="modal-title"
+                                open={visible}
+                                onClose={closeHandler}
+                            >
+                                <Modal.Header>
+                                    <Text id="modal-title" size={18}>
+                                        Share this Article
+                                    </Text>
+                                </Modal.Header>
+                                <Modal.Body>
+                                    <Textarea
+                                        label='Comment'
+                                        placeholder='ex) 課題18やる時参考になった!'
+                                    />
+                                </Modal.Body>
+                                <Modal.Footer>
+                                    <Button
+                                        auto
+                                        flat
+                                        color="error"
+                                        onPress={closeHandler}
+                                    >
+                                        Close
+                                    </Button>
+                                    <Button auto onPress={closeHandler}>
+                                        Share
+                                    </Button>
+                                </Modal.Footer>
+                            </Modal>
                             <Spacer x={1} />
                             <Button flat size="sm" color="primary">
                                 Go to Website

@@ -20,17 +20,37 @@
         {
             "id": "1",
             "link": "https://github.com/kitade-shogo",
-            "user_id": "1"
+            "user_id": "1",
+            "folder_id": "1"
         },
         {
             "id": "2",
             "link": "https://zukan.pokemon.co.jp/detail/0479",
-            "user_id": "2"
+            "user_id": "2",
+            "folder_id": "2"
         },
         {
             "id": "3",
             "link": "https://ja.reactjs.org/",
-            "user_id": "3"
+            "user_id": "3",
+            "folder_id": "3"
+        }
+    ],
+    "folders": [
+        {
+            "id": "1",
+            "name": "React",
+            "user_id": "1"
+        },
+        {
+            "id": "2",
+            "name": "Ruby",
+            "user_id": "1"
+        },
+        {
+            "id": "3",
+            "name": "Rails",
+            "user_id": "1"
         }
     ]
 }

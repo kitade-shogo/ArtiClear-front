@@ -1,4 +1,12 @@
-import { Navbar, Button, Link, Text, useTheme, Dropdown, Avatar } from '@nextui-org/react'
+import {
+    Navbar,
+    Button,
+    Link,
+    Text,
+    useTheme,
+    Dropdown,
+    Avatar,
+} from '@nextui-org/react'
 import NavbarBoards from './TopbarLink/navbarBoards'
 import NavbarBookmarks from './TopbarLink/navbarBookmarks'
 import NavbarCalender from './TopbarLink/navbarCalender'
@@ -17,11 +25,7 @@ const TopBar = () => {
                     ArtiClear
                 </Text>
             </Navbar.Brand>
-            <Navbar.Content
-                hideIn="xs"
-                gap="$20"
-                variant="default"
-            >
+            <Navbar.Content hideIn="xs" gap="$20" variant="default">
                 <NavbarBookmarks />
                 <NavbarCalender />
                 <NavbarBoards />

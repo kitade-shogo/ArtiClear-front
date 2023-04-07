@@ -13,7 +13,7 @@ const NavbarCalender = () => {
     ) : (
         <Navbar.Item>
             <Link to="/calender" className="text-black">
-                <p>Calender</p>
+                <p className='font-medium'>Calender</p>
             </Link>
         </Navbar.Item>
     )
