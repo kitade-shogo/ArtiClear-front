@@ -1,17 +1,34 @@
-import { Container, Grid } from '@nextui-org/react'
+import { Pagination } from '@nextui-org/react'
 import MyBoard from '../myBoard'
 
 const Boards = () => {
     return (
         <>
-            <h1>What's others See</h1>
-            <Container fluid>
-                <Grid.Container justify="center">
-                    <Grid xs={10} className="overflow-x-scroll">
-                        <MyBoard />
-                    </Grid>
-                </Grid.Container>
-            </Container>
+            <div className="container justify-center mx-24 my-8 space-y-10">
+                <p className="my-8 font-oswald text-5xl text-center">
+                    What Others See
+                </p>
+                <div className="flex flex-wrap gap-6">
+                    <MyBoard />
+                    <MyBoard />
+                    <MyBoard />
+                    <MyBoard />
+                    <MyBoard />
+                    <MyBoard />
+                    <MyBoard />
+                    <MyBoard />
+                    <MyBoard />
+                </div>
+                <div className="flex justify-center">
+                    <Pagination
+                        onlyDots
+                        size="xl"
+                        rounded
+                        initialPage={1}
+                        total={6}
+                    />
+                </div>
+            </div>
         </>
     )
 }

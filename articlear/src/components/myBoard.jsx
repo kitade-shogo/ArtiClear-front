@@ -1,47 +1,49 @@
-import { Card, Grid, Text, Link, Avatar, Spacer } from '@nextui-org/react'
+import { Card, Avatar, User } from '@nextui-org/react'
 
-const MyBoard = () => { 
+const MyBoard = () => {
     return (
         <>
-            <Card css={{ p: '$6', mw: '400px' }}>
-                <Card.Header>
-                    <Grid.Container direction='row' >
-                        <Grid xs={1}>
-                            <Avatar
+            <div className="w-96">
+                <Card variant="bordered" isHoverable>
+                    <div className="mx-6 my-6">
+                        <Card.Header>
+                            <User
+                                src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+                                name="Ariana Wattson"
+                                description="UI/UX Designer @Github"
                                 size="lg"
-                                src="https://i.pravatar.cc/150?u=a042581f4e29026024d"
-                                color="primary"
-                                bordered
                             />
-                        </Grid>
-                        <Spacer x={2} />
-                        <Grid >
-                            <Grid.Container direction='column'>
-                                <Grid xs={1}><Text b>Name</Text></Grid>
-                                <Grid xs={1}>Profile</Grid>
-                            </Grid.Container>
-                        </Grid>
-                        </Grid.Container>
-                </Card.Header>
-                <Card.Body css={{ py: '$2' }}>
-                    <Text>
-                        Make beautiful websites regardless of your design
-                        experience.
-                    </Text>
-                </Card.Body>
-                <Card.Footer>
-                    <Link
-                        icon
-                        color="primary"
-                        target="_blank"
-                        href="https://github.com/nextui-org/nextui"
-                    >
-                        Visit source code on GitHub.
-                    </Link>
-                </Card.Footer>
-            </Card>
+                        </Card.Header>
+                        <Card.Body>
+                            <div className="space-y-4">
+                                <div>
+                                    <p>
+                                        "This Arrtiicle is very good for solve
+                                        RUNTEQ midterm exam, Rails. "
+                                    </p>
+                                </div>
+                                <Card.Divider />
+                                <div className="flex justify-between">
+                                    <div>
+                                        <p className="text-xl font-semibold">
+                                            Title of Website
+                                        </p>
+                                        <p className="text-xs text-my-gray">
+                                            https://github.com/kitade-shogo
+                                        </p>
+                                    </div>
+                                    <img
+                                        src="https://github.com/nextui-org/nextui/blob/next/apps/docs/public/nextui-banner.jpeg?raw=true"
+                                        className="w-28 object-contain rounded-sm"
+                                    />
+                                </div>
+                            </div>
+                        </Card.Body>
+                    </div>
+                </Card>
+            </div>
         </>
     )
 }
 
-export default MyBoard;
+export default MyBoard

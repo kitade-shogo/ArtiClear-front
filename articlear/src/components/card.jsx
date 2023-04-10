@@ -47,7 +47,7 @@ const MyCard = () => {
                                 <Modal.Body>
                                     <Textarea
                                         label='Comment'
-                                        placeholder='ex) 課題18やる時参考になった!'
+                                        placeholder='ここにコメントしてください'
                                     />
                                 </Modal.Body>
                                 <Modal.Footer>
