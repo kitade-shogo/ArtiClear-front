@@ -7,13 +7,15 @@ const NavbarBoards = () => {
     return path === '/boards' ? (
         <Navbar.Item isactive="true">
             <Link to="/boards">
-                <p className='font-bold'>Boards</p>
+                <p className="font-bold text-primary">Boards</p>
             </Link>
         </Navbar.Item>
     ) : (
         <Navbar.Item>
-            <Link to="/boards" className="text-black">
-                <p className='font-medium'>Boards</p>
+                <Link to="/boards">
+                <p className="text-black font-medium hover:text-my-gray">
+                    Boards
+                </p>
             </Link>
         </Navbar.Item>
     )

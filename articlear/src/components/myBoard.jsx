@@ -1,4 +1,4 @@
-import { Card, Avatar, User } from '@nextui-org/react'
+import { Card, User } from '@nextui-org/react'
 
 const MyBoard = () => {
     return (
@@ -34,6 +34,7 @@ const MyBoard = () => {
                                     </div>
                                     <img
                                         src="https://github.com/nextui-org/nextui/blob/next/apps/docs/public/nextui-banner.jpeg?raw=true"
+                                        alt="NextUI"
                                         className="w-28 object-contain rounded-sm"
                                     />
                                 </div>

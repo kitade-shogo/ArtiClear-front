@@ -7,13 +7,13 @@ const NavbarBookmarks = () => {
     return path === '/bookmarks' ? (
         <Navbar.Item isactive="true">
             <Link to="/bookmarks">
-                <p className='font-bold'>Bookmarks</p>
+                <p className='font-bold text-primary'>Bookmarks</p>
             </Link>
         </Navbar.Item>
     ) : (
         <Navbar.Item>
-            <Link to="/bookmarks" className="text-black">
-                <p className='font-medium'>Bookmarks</p>
+            <Link to="/bookmarks">
+                <p className='text-black font-medium hover:text-my-gray'>Bookmarks</p>
             </Link>
         </Navbar.Item>
     )

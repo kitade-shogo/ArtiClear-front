@@ -20,6 +20,10 @@ module.exports = {
                 textLowContrast: '#0078a1',
                 textHighContrast: '#003242',
                 "my-gray": '#718096',
+                primary: "#0072F5"
+            },
+            height: {
+                '120': '30rem',
             },
         },
         fontFamily: {
