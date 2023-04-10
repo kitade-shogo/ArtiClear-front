@@ -27,7 +27,7 @@ const MySidebar = () => {
                         <Sidebar.Item href="#">Next</Sidebar.Item>
                         <Sidebar.Item href="#">Python</Sidebar.Item>
                         <Sidebar.Item>
-                            <Button flat auto onPress={handler}>
+                            <Button flat auto rounded onPress={handler}>
                                 Add New Folder
                             </Button>
                             <Modal
@@ -38,7 +38,7 @@ const MySidebar = () => {
                             >
                                 <Modal.Header>
                                     <Text id="modal-title" size={18}>
-                                        New Folder
+                                        New
                                     </Text>
                                 </Modal.Header>
                                 <Modal.Body>

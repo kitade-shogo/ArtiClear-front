@@ -1,7 +1,5 @@
 import {
     Navbar,
-    Button,
-    Link,
     Text,
     useTheme,
     Dropdown,
@@ -19,13 +17,18 @@ const TopBar = () => {
             height="80px"
             isBordered={isDark}
             maxWidth="md"
+            className="relative flex justify-center"
         >
             <Navbar.Brand>
                 <Text hideIn="xs" size="$3xl" className="font-oswald">
                     ArtiClear
                 </Text>
             </Navbar.Brand>
-            <Navbar.Content hideIn="xs" gap="$20" variant="default">
+            <Navbar.Content
+                hideIn="xs"
+                gap="$20"
+                className="absolute left-1/2 transform -translate-x-1/2"
+            >
                 <NavbarBookmarks />
                 <NavbarCalender />
                 <NavbarBoards />

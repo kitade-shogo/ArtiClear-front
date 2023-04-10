@@ -7,13 +7,13 @@ const NavbarCalender = () => {
     return path === '/calender' ? (
         <Navbar.Item isactive="true">
             <Link to="/calender">
-                <p className='font-bold'>Calender</p>
+                <p className="font-bold text-primary">Calender</p>
             </Link>
         </Navbar.Item>
     ) : (
         <Navbar.Item>
-            <Link to="/calender" className="text-black">
-                <p className='font-medium'>Calender</p>
+            <Link to="/calender">
+                <p className="text-black font-medium hover:text-my-gray">Calender</p>
             </Link>
         </Navbar.Item>
     )
