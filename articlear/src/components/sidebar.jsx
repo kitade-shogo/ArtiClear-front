@@ -13,7 +13,8 @@ const MySidebar = () => {
 
     return (
         <>
-            <Sidebar aria-label="Default sidebar example">
+            <div className="w--fit bg-background2">
+            <Sidebar aria-label="Default sidebar example" className='bg-background2'>
                 <Sidebar.Items>
                     <Sidebar.ItemGroup>
                         <Sidebar.Item href="#">Ruby</Sidebar.Item>
@@ -68,7 +69,8 @@ const MySidebar = () => {
                         </Sidebar.Item>
                     </Sidebar.ItemGroup>
                 </Sidebar.Items>
-            </Sidebar>
+                </Sidebar>
+            </div>
         </>
     )
 }

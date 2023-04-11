@@ -8,7 +8,7 @@ import MyCard from '../card'
 const Bookmarks = () => {
     return (
         <>
-            <div className="container flex justfy-center mx-24 my-8">
+            <div className="container flex justfy-center mx-24 py-8">
                 <MySidebar />
                 <div className="w-full space-y-8">
                     <p className="text-3xl"> React の記事</p>

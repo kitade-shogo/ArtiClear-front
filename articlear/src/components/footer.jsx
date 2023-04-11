@@ -4,7 +4,7 @@ const MyFooter = () => {
     return (
         <>
             <div className="bottom-0 w-full z-50">
-                <Footer container={true} className="rounded-none h-16">
+                <Footer container={true} className="rounded-none h-16 bg-componentBackgroundSelected">
                     <Footer.Copyright href="#" by="ArtiClear™" year={2023} />
                     <Footer.LinkGroup>
                         <Footer.Link href="#">About</Footer.Link>

@@ -1,10 +1,4 @@
-import {
-    Navbar,
-    Text,
-    useTheme,
-    Dropdown,
-    Avatar,
-} from '@nextui-org/react'
+import { Navbar, Text, useTheme, Dropdown, Avatar } from '@nextui-org/react'
 import NavbarBoards from './TopbarLink/navbarBoards'
 import NavbarBookmarks from './TopbarLink/navbarBookmarks'
 import NavbarCalender from './TopbarLink/navbarCalender'

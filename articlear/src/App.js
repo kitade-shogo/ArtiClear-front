@@ -34,7 +34,9 @@ function App() {
             <NextUIProvider theme={theme}>
                 <BrowserRouter>
                     <TopBar />
-                    <RouterConfig />
+                    <div className='bg-background2'>
+                        <RouterConfig />
+                    </div>
                     <MyFooter />
                 </BrowserRouter>
             </NextUIProvider>
