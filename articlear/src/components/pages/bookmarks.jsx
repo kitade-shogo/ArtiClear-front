@@ -12,7 +12,7 @@ const Bookmarks = () => {
                 <Sidebar />
                 <div className="w-full space-y-8">
                     <p className="text-3xl"> React の記事</p>
-                    <div className="flex-cols h-120 overflow-y-auto">
+                    <div className="flex-cols h-144 overflow-y-auto">
                         <MyCard />
                         <MyCard />
                         <MyCard />

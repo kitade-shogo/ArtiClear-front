@@ -1,15 +1,13 @@
-import { Navbar, Text, useTheme, Dropdown, Avatar } from '@nextui-org/react'
+import { Navbar, Text, Dropdown, Avatar } from '@nextui-org/react'
 import NavbarBoards from './TopbarLink/navbarBoards'
 import NavbarBookmarks from './TopbarLink/navbarBookmarks'
 import NavbarCalender from './TopbarLink/navbarCalender'
 
 const TopBar = () => {
-    const { isDark } = useTheme()
     return (
         <Navbar
             variant="sticky"
             height="80px"
-            isBordered={isDark}
             maxWidth="md"
             className="relative flex justify-center"
         >
