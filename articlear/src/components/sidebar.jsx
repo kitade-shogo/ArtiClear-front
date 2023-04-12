@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { Button, Modal, Text, Input } from '@nextui-org/react'
-import { Sidebar } from 'flowbite-react'
 
-const MySidebar = () => {
+const Sidebar = () => {
     const [visible, setVisible] = useState(false)
     const handler = () => setVisible(true)
 
@@ -13,22 +12,27 @@ const MySidebar = () => {
 
     return (
         <>
-            <div className="w--fit bg-background2">
-            <Sidebar aria-label="Default sidebar example" className='bg-background2'>
-                <Sidebar.Items>
-                    <Sidebar.ItemGroup>
-                        <Sidebar.Item href="#">Ruby</Sidebar.Item>
-                        <Sidebar.Item href="#" label="15">
-                            Rails
-                        </Sidebar.Item>
-                        <Sidebar.Item href="#" label="3">
-                            JavaScript
-                        </Sidebar.Item>
-                        <Sidebar.Item href="#">React</Sidebar.Item>
-                        <Sidebar.Item href="#">Next</Sidebar.Item>
-                        <Sidebar.Item href="#">Python</Sidebar.Item>
-                        <Sidebar.Item>
-                            <Button flat auto rounded onPress={handler}>
+            <aside
+                id="default-sidebar"
+                className="w-64 h-full bg-componentBackgroundNormal rounded-lg mt-14"
+                aria-label="Sidebar"
+            >
+                <div className="h-full px-1 py-2 overflow-y-auto">
+                    <ul className="space-y-2 font-medium">
+                        <li className="flex justify-center items-center p-2 rounded-lg  hover:bg-componentBackgroundSelected">
+                            <p>React</p>
+                        </li>
+                        <li className="flex justify-center items-center p-2 rounded-lg  hover:bg-componentBackgroundSelected">
+                            <p>React</p>
+                        </li>
+                        <li className="flex justify-center items-center p-2 rounded-lg  hover:bg-componentBackgroundSelected">
+                            <p>React</p>
+                        </li>
+                        <li className="flex justify-center items-center p-2 rounded-lg  hover:bg-componentBackgroundSelected">
+                            <p>React</p>
+                        </li>
+                        <li className="flex justify-center items-center p-2 rounded-lg">
+                            <Button flat auto onPress={handler}>
                                 Add New Folder
                             </Button>
                             <Modal
@@ -66,13 +70,12 @@ const MySidebar = () => {
                                     </Button>
                                 </Modal.Footer>
                             </Modal>
-                        </Sidebar.Item>
-                    </Sidebar.ItemGroup>
-                </Sidebar.Items>
-                </Sidebar>
-            </div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
         </>
     )
 }
 
-export default MySidebar
+export default Sidebar
