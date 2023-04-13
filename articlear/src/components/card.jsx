@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Card, Text, Button, Modal, Textarea } from '@nextui-org/react'
+import { Text, Button, Modal, Textarea } from '@nextui-org/react'
 
 const MyCard = () => {
     const [visible, setVisible] = useState(false)
