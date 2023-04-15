@@ -1,51 +1,28 @@
-import {
-    Navbar,
-    Text,
-    useTheme,
-    Dropdown,
-    Avatar,
-} from '@nextui-org/react'
+import { Navbar, Text, Dropdown, Avatar } from '@nextui-org/react'
 import NavbarBoards from './TopbarLink/navbarBoards'
 import NavbarBookmarks from './TopbarLink/navbarBookmarks'
 import NavbarCalender from './TopbarLink/navbarCalender'
 
 const TopBar = () => {
-    const { isDark } = useTheme()
     return (
-        <Navbar
-            variant="sticky"
-            height="80px"
-            isBordered={isDark}
-            maxWidth="md"
-            className="relative flex justify-center"
-        >
-            <Navbar.Brand>
-                <Text hideIn="xs" size="$3xl" className="font-oswald">
-                    ArtiClear
-                </Text>
-            </Navbar.Brand>
-            <Navbar.Content
-                hideIn="xs"
-                gap="$20"
-                className="absolute left-1/2 transform -translate-x-1/2"
-            >
-                <NavbarBookmarks />
-                <NavbarCalender />
-                <NavbarBoards />
-            </Navbar.Content>
-            <Navbar.Content>
+        <Navbar variant="sticky" maxWidth="fluid" className='z-10'>
+            <div className="w-full flex justify-between items-center mx-24">
+                <p className="text-3xl font-oswald">ArtiClear</p>
+                <div className="flex justify-center items-center space-x-16 mr-28">
+                    <NavbarBookmarks />
+                    <NavbarCalender />
+                    <NavbarBoards />
+                </div>
                 <Dropdown placement="bottom-right">
-                    <Navbar.Item>
-                        <Dropdown.Trigger>
-                            <Avatar
-                                bordered
-                                as="button"
-                                color="secondary"
-                                size="md"
-                                src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
-                            />
-                        </Dropdown.Trigger>
-                    </Navbar.Item>
+                    <Dropdown.Trigger>
+                        <Avatar
+                            bordered
+                            as="button"
+                            color="secondary"
+                            size="md"
+                            src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+                        />
+                    </Dropdown.Trigger>
                     <Dropdown.Menu
                         aria-label="User menu actions"
                         color="secondary"
@@ -76,7 +53,7 @@ const TopBar = () => {
                         </Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
-            </Navbar.Content>
+            </div>
         </Navbar>
     )
 }

@@ -1,10 +1,12 @@
 import { Pagination } from '@nextui-org/react'
+import TopBar from '../topbar'
 import MyBoard from '../myBoard'
 
 const Boards = () => {
     return (
         <>
-            <div className="container flex-col justify-center mx-24 my-8 space-y-10">
+            <TopBar />
+            <div className="container flex-col justify-center mx-24 py-8 space-y-10">
                 <p className="my-8 font-oswald text-5xl text-center">
                     What Others See
                 </p>

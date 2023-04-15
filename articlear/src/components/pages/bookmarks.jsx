@@ -2,17 +2,19 @@ import {
     Textarea,
     Button,
 } from '@nextui-org/react'
-import MySidebar from '../sidebar'
 import MyCard from '../card'
+import Sidebar from '../sidebar'
+import TopBar from '../topbar'
 
 const Bookmarks = () => {
     return (
         <>
-            <div className="container flex justfy-center mx-24 my-8">
-                <MySidebar />
+            <TopBar />
+            <div className="container flex justfy-center mx-24 py-8 space-x-10">
+                <Sidebar />
                 <div className="w-full space-y-8">
                     <p className="text-3xl"> React の記事</p>
-                    <div className="flex-cols h-120 overflow-y-auto">
+                    <div className="flex-cols h-144 overflow-y-auto">
                         <MyCard />
                         <MyCard />
                         <MyCard />
