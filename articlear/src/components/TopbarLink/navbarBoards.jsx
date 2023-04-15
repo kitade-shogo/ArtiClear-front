@@ -6,11 +6,11 @@ const NavbarBoards = () => {
 
     return path === '/boards' ? (
         <Link to="/boards">
-            <p className="font-bold text-primary">Boards</p>
+            <p className="font-normal text-primary">Boards</p>
         </Link>
     ) : (
         <Link to="/boards">
-            <p className="text-black font-medium hover:text-my-gray">Boards</p>
+            <p className="text-black font-normal hover:text-my-gray">Boards</p>
         </Link>
     )
 }

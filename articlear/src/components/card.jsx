@@ -12,7 +12,7 @@ const MyCard = () => {
 
     return (
         <>
-            <div className="w-11/12 border-t-2 px-8 py-6 hover:bg-componentBackgroundNormal">
+            <div className="w-11/12 border-t-2 px-8 py-6 bg-white hover:bg-componentBackgroundNormal">
                 <div className="flex justify-between">
                     <div>
                         <p className="text-2xl font-semibold underline">

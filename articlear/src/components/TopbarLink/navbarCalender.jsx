@@ -6,11 +6,11 @@ const NavbarCalender = () => {
 
     return path === '/calender' ? (
         <Link to="/calender">
-            <p className="font-bold text-primary">Calender</p>
+            <p className="font-normal text-primary">Calender</p>
         </Link>
     ) : (
         <Link to="/calender">
-            <p className="text-black font-medium hover:text-my-gray">
+            <p className="text-black font-normal hover:text-my-gray">
                 Calender
             </p>
         </Link>

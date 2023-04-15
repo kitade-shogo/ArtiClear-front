@@ -5,10 +5,10 @@ import NavbarCalender from './TopbarLink/navbarCalender'
 
 const TopBar = () => {
     return (
-        <Navbar variant="sticky" height="80px" maxWidth="fluid">
+        <Navbar variant="sticky" maxWidth="fluid" className='z-10'>
             <div className="w-full flex justify-between items-center mx-24">
                 <p className="text-3xl font-oswald">ArtiClear</p>
-                <div className="flex justify-center items-center space-x-16">
+                <div className="flex justify-center items-center space-x-16 mr-28">
                     <NavbarBookmarks />
                     <NavbarCalender />
                     <NavbarBoards />

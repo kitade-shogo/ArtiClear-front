@@ -6,11 +6,11 @@ const NavbarBookmarks = () => {
 
     return path === '/bookmarks' ? (
         <Link to="/bookmarks">
-            <p className="font-bold text-primary">Bookmarks</p>
+            <p className="font-normal text-primary">Bookmarks</p>
         </Link>
     ) : (
         <Link to="/bookmarks">
-            <p className="text-black font-medium hover:text-my-gray">
+            <p className="text-black font-normal hover:text-my-gray">
                 Bookmarks
             </p>
         </Link>

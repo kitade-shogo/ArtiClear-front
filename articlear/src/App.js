@@ -2,7 +2,6 @@ import { createTheme, NextUIProvider } from '@nextui-org/react'
 import { BrowserRouter } from 'react-router-dom'
 import './App.css'
 import RouterConfig from './config/RouterConfig'
-import TopBar from './components/Topbar'
 import MyFooter from './components/footer'
 
 const theme = createTheme({
@@ -33,7 +32,6 @@ function App() {
         <>
             <NextUIProvider theme={theme}>
                 <BrowserRouter>
-                    <TopBar />
                     <div className='bg-background2'>
                         <RouterConfig />
                     </div>

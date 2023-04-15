@@ -4,10 +4,12 @@ import {
 } from '@nextui-org/react'
 import MyCard from '../card'
 import Sidebar from '../sidebar'
+import TopBar from '../topbar'
 
 const Bookmarks = () => {
     return (
         <>
+            <TopBar />
             <div className="container flex justfy-center mx-24 py-8 space-x-10">
                 <Sidebar />
                 <div className="w-full space-y-8">
