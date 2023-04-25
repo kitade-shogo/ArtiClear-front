@@ -9,7 +9,6 @@ import { auth } from '../../../firebase'
 
 const useFirebaseAuth = () => {
     const [currentUser, setCurrentUser] = useState(null)
-    //ロード中かどうかの状態
     const [loading, setLoading] = useState(true)
 
     const loginWithGoogle = async () => {
