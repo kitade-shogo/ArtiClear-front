@@ -27,9 +27,11 @@ const Top = () => {
                         後押しするブックマーク管理・共有サービスです
                     </p>
                     <div className="flex justify-center">
-                        <p className="text-white text-center text-xl border-2 px-8 py-2 rounded-3xl hover:bg-textLowContrast">
-                            Log in
-                        </p>
+                        <Link to="bookmarks">
+                            <p className="text-white text-center text-xl border-2 px-8 py-2 rounded-3xl hover:bg-textLowContrast">
+                                Log in
+                            </p>
+                        </Link>
                     </div>
                 </div>
             </div>

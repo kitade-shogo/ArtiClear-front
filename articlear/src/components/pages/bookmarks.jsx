@@ -2,11 +2,23 @@ import {
     Textarea,
     Button,
 } from '@nextui-org/react'
+import { useEffect } from 'react'
 import MyCard from '../card'
 import Sidebar from '../sidebar'
 import TopBar from '../topbar'
+import axios from 'axios'
 
 const Bookmarks = () => {
+
+    useEffect(() => { 
+        const getBookmarks = async () => { 
+            const res = await axios.get('http://localhost:3100/bookmarks')
+            console.log(res.data)
+        }
+        getBookmarks()
+    }, [])
+
+
     return (
         <>
             <TopBar />
