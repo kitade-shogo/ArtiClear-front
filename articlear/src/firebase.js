@@ -12,8 +12,11 @@ const firebaseConfig = {
     measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 }
 
+//　アプリの初期化
 const app = initializeApp(firebaseConfig)
+// 認証機能
 const auth = getAuth(app)
+// アナリティクス機能
 const analytics = getAnalytics(app)
 
 export { auth, analytics }

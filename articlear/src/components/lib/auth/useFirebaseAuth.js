@@ -1,53 +1,63 @@
-import { useState, useEffect } from 'react';
-import { signInWithPopup, signOut, onAuthStateChanged, GoogleAuthProvider } from 'firebase/auth';
-import { auth } from '../../../firebase';
+import { useState, useEffect } from 'react'
+import {
+    signInWithPopup,
+    signOut,
+    onAuthStateChanged,
+    GoogleAuthProvider,
+} from 'firebase/auth'
+import { auth } from '../../../firebase'
 
-const useFirebaseAuth = () => { 
-    const [currentUser, setCurrentUser] = useState(null);
-    const [loading, setLoading] = useState(true);
+const useFirebaseAuth = () => {
+    const [currentUser, setCurrentUser] = useState(null)
+    //ロード中かどうかの状態
+    const [loading, setLoading] = useState(true)
 
-    const loginWithGoogle = async() => {
-        const provider = new GoogleAuthProvider();
-        const result = await signInWithPopup(auth, provider);
-
+    const loginWithGoogle = async () => {
+        const provider = new GoogleAuthProvider()
+        const result = await signInWithPopup(auth, provider)
+        
+        // SingInWithPopupの返り値のuserを取得
         if (result.user) {
-            const user = result.user;
-            return user;
+            const user = result.user
+            return user
         }
     }
 
-    const clear = () => { 
-        setCurrentUser(null);
-        setLoading(false);
+    const clear = () => {
+        setCurrentUser(null)
+        setLoading(false)
     }
 
-    const logout = async () => { 
-        await signOut(auth);
-        clear();
+    // SignOutでFirebaseの認証を解除
+    const logout = async () => {
+        await signOut(auth)
+        clear()
     }
 
+    //
     const nextOrObserver = (user) => {
         if (!user) {
-            setLoading(false);
-            setCurrentUser(null);
-            return;
+            setLoading(false)
+            setCurrentUser(null)
+            return
         }
-        setLoading(true);
-        setCurrentUser(user);
-        setLoading(false);
+        setLoading(true)
+        setCurrentUser(user)
+        setLoading(false)
     }
-    
+
+    // Firebaseのログイン状態の監視
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, nextOrObserver);
-        return () => unsubscribe();
-    }, []);
+        const unsubscribe = onAuthStateChanged(auth, nextOrObserver)
+        return () => unsubscribe()
+    }, [])
 
     return {
         currentUser,
         loading,
         loginWithGoogle,
-        logout
+        logout,
     }
 }
 
-export default useFirebaseAuth;
+export default useFirebaseAuth

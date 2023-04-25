@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom'
 import './App.css'
 import RouterConfig from './config/RouterConfig'
 import MyFooter from './components/footer'
+import { AuthProvider } from './components/context/AuthContext'
 
 const theme = createTheme({
     type: 'light', // it could be "light" or "dark"
@@ -31,12 +32,14 @@ function App() {
     return (
         <>
             <NextUIProvider theme={theme}>
-                <BrowserRouter>
-                    <div className='bg-background2'>
-                        <RouterConfig />
-                    </div>
-                    <MyFooter />
-                </BrowserRouter>
+                <AuthContextProvider>
+                    <BrowserRouter>
+                        <div className="bg-background2">
+                            <RouterConfig />
+                        </div>
+                        <MyFooter />
+                    </BrowserRouter>
+                </AuthContextProvider>
             </NextUIProvider>
         </>
     )
