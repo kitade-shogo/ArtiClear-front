@@ -11,6 +11,7 @@ const TopBar = () => {
                 <div className="flex justify-center items-center space-x-16 mr-28">
                     <NavbarBookmarks />
                     <NavbarCalender />
+                    <NavbarBoards />
                 </div>
                 <Dropdown placement="bottom-right">
                     <Dropdown.Trigger>

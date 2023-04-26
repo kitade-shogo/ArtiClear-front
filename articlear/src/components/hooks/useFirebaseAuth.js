@@ -5,7 +5,7 @@ import {
     onAuthStateChanged,
     GoogleAuthProvider,
 } from 'firebase/auth'
-import { auth } from '../../../firebase'
+import { auth } from '../../firebase'
 
 const useFirebaseAuth = () => {
     const [currentUser, setCurrentUser] = useState(null)
@@ -14,7 +14,7 @@ const useFirebaseAuth = () => {
     const loginWithGoogle = async () => {
         const provider = new GoogleAuthProvider()
         const result = await signInWithPopup(auth, provider)
-        
+
         // SingInWithPopupの返り値のuserを取得
         if (result.user) {
             const user = result.user
@@ -47,8 +47,7 @@ const useFirebaseAuth = () => {
 
     // Firebaseのログイン状態の監視
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, nextOrObserver)
-        return () => unsubscribe()
+        return onAuthStateChanged(auth, nextOrObserver)
     }, [])
 
     return {
@@ -59,4 +58,4 @@ const useFirebaseAuth = () => {
     }
 }
 
-export default useFirebaseAuth
+export default useFirebaseAuth;
