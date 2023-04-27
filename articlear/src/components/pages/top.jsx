@@ -8,6 +8,7 @@ import CheckedSentence from '../checkedSentence'
 import bgImage from '../img/sky.jpeg'
 import LoginBird from '../loginBird'
 import TopBar from '../topbarAnother'
+import LoginModal from '../loginModal'
 
 const Top = () => {
     return (
@@ -27,9 +28,7 @@ const Top = () => {
                         後押しするブックマーク管理・共有サービスです
                     </p>
                     <div className="flex justify-center">
-                        <p className="text-white text-center text-xl border-2 px-8 py-2 rounded-3xl hover:bg-textLowContrast">
-                            Log in
-                        </p>
+                        <LoginModal />
                     </div>
                 </div>
             </div>
@@ -139,7 +138,6 @@ const Top = () => {
                     </div>
                 </div>
             </div>
-            <LoginBird />
         </>
     )
 }

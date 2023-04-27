@@ -1,3 +1,5 @@
+import LoginModal from "./loginModal"
+
 const ClearNavbar = () => {
     return (
         <>
@@ -5,9 +7,7 @@ const ClearNavbar = () => {
                 <p className="text-4xl font-oswald font-extralight text-white">
                     ArtiClear
                 </p>
-                <div className="border-2 flex justify-center rounded-3xl px-8 py-2">
-                    <p className="text-white text-center">ログイン</p>
-                </div>
+                <LoginModal />
             </div>
         </>
     )

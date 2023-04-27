@@ -3,6 +3,9 @@ import { BrowserRouter } from 'react-router-dom'
 import './App.css'
 import RouterConfig from './config/RouterConfig'
 import MyFooter from './components/footer'
+import { AuthContextProvider } from './components/context/AuthContext'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const theme = createTheme({
     type: 'light', // it could be "light" or "dark"
@@ -30,13 +33,27 @@ const theme = createTheme({
 function App() {
     return (
         <>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme='light'
+            />
             <NextUIProvider theme={theme}>
-                <BrowserRouter>
-                    <div className='bg-background2'>
-                        <RouterConfig />
-                    </div>
-                    <MyFooter />
-                </BrowserRouter>
+                <AuthContextProvider>
+                    <BrowserRouter>
+                        <div className="bg-background2">
+                            <RouterConfig />
+                        </div>
+                        <MyFooter />
+                    </BrowserRouter>
+                </AuthContextProvider>
             </NextUIProvider>
         </>
     )

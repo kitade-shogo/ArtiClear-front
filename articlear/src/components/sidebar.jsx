@@ -1,14 +1,32 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button, Modal, Text, Input } from '@nextui-org/react'
+import axios from 'axios'
 
 const Sidebar = () => {
     const [visible, setVisible] = useState(false)
-    const handler = () => setVisible(true)
+    const [folderCount, setFolderCount] = useState(0)
+    const [folderName, setFolderName] = useState('')
+    const [folders, setFolders] = useState([])
 
-    const closeHandler = () => {
+    const handler = () => setVisible(true)
+    const closeHandler = () => { 
         setVisible(false)
-        console.log('closed')
     }
+    const addHandler = () => {
+        axios.post('http://localhost:3100/folders', { id: folderCount + 1, name: folderName })
+        setFolderCount((prev) => prev + 1)
+        setVisible(false)
+    }
+
+    useEffect(() => {
+        const getFolders = async () => {
+            const res = await axios.get('http://localhost:3100/folders')
+            setFolders(res.data)
+            setFolderCount(res.data.length)
+            console.log("aiueo")
+        }
+        getFolders()
+    }, [folderCount])
 
     return (
         <>
@@ -18,20 +36,18 @@ const Sidebar = () => {
                 aria-label="Sidebar"
             >
                 <div className="h-full px-1 py-2 overflow-y-auto">
-                    <p className='text-xl font-semibold pl-3'>Folders</p>
+                    <p className="text-xl font-semibold pl-3">Folders</p>
                     <ul className="space-y-2 font-medium">
-                        <li className="flex  items-center p-2 rounded-lg  hover:bg-componentBackgroundHover">
-                            <p>Default</p>
-                        </li>
-                        <li className="flex items-center p-2 rounded-lg  hover:bg-componentBackgroundHover">
-                            <p>React</p>
-                        </li>
-                        <li className="flex items-center p-2 rounded-lg  hover:bg-componentBackgroundHover">
-                            <p>React</p>
-                        </li>
-                        <li className="flex items-center p-2 rounded-lg  hover:bg-componentBackgroundHover">
-                            <p>React</p>
-                        </li>
+                        {folders.map((folder) => {
+                            return (
+                                <li
+                                    key={folder.id}
+                                    className="flex  items-center p-2 rounded-lg  hover:bg-componentBackgroundHover"
+                                >
+                                    {folder.name}
+                                </li>
+                            )
+                        })}
                         <li className="flex items-center p-2 rounded-lg">
                             <Button ghost auto onPress={handler}>
                                 Add New Folder
@@ -55,6 +71,11 @@ const Sidebar = () => {
                                         color="primary"
                                         size="lg"
                                         placeholder="Folder Name"
+                                        aria-labelledby="Folder Name"
+                                        value={folderName}
+                                        onChange={(e) =>
+                                            setFolderName(e.target.value)
+                                        }
                                     />
                                 </Modal.Body>
                                 <Modal.Footer>
@@ -66,7 +87,7 @@ const Sidebar = () => {
                                     >
                                         Close
                                     </Button>
-                                    <Button auto onPress={closeHandler}>
+                                    <Button auto onPress={addHandler}>
                                         Add
                                     </Button>
                                 </Modal.Footer>

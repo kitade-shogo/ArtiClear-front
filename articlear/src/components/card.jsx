@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Text, Button, Modal, Textarea } from '@nextui-org/react'
+import axios from 'axios'
 
 const MyCard = () => {
     const [visible, setVisible] = useState(false)
-    const handler = () => setVisible(true)
 
+    const handler = () => setVisible(true)
     const closeHandler = () => {
         setVisible(false)
         console.log('closed')

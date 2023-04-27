@@ -1,56 +1,80 @@
 {
-    "users": [
-        {
-            "id": "1",
-            "name": "Kitade",
-            "profile": "RUNTEQ34期生"
-        },
-        {
-            "id": "2",
-            "name": "Rotomu",
-            "profile": "電気タイプ"
-        },
-        {
-            "id": "3",
-            "name": "React",
-            "profile": "JavaScriptフレームワーク"
-        }
-    ],
-    "bookmarks": [
-        {
-            "id": "1",
-            "link": "https://github.com/kitade-shogo",
-            "user_id": "1",
-            "folder_id": "1"
-        },
-        {
-            "id": "2",
-            "link": "https://zukan.pokemon.co.jp/detail/0479",
-            "user_id": "2",
-            "folder_id": "2"
-        },
-        {
-            "id": "3",
-            "link": "https://ja.reactjs.org/",
-            "user_id": "3",
-            "folder_id": "3"
-        }
-    ],
-    "folders": [
-        {
-            "id": "1",
-            "name": "React",
-            "user_id": "1"
-        },
-        {
-            "id": "2",
-            "name": "Ruby",
-            "user_id": "1"
-        },
-        {
-            "id": "3",
-            "name": "Rails",
-            "user_id": "1"
-        }
-    ]
+  "users": [
+    {
+      "id": "1",
+      "name": "Kitade",
+      "profile": "RUNTEQ34期生"
+    },
+    {
+      "id": "2",
+      "name": "Rotomu",
+      "profile": "電気タイプ"
+    },
+    {
+      "id": "3",
+      "name": "React",
+      "profile": "JavaScriptフレームワーク"
+    }
+  ],
+  "bookmarks": [
+    {
+      "id": "1",
+      "link": "https://github.com/kitade-shogo",
+      "user_id": "1",
+      "folder_id": "1"
+    },
+    {
+      "id": "2",
+      "link": "https://zukan.pokemon.co.jp/detail/0479",
+      "user_id": "2",
+      "folder_id": "2"
+    },
+    {
+      "id": "3",
+      "link": "https://ja.reactjs.org/",
+      "user_id": "3",
+      "folder_id": "3"
+    }
+  ],
+  "folders": [
+    {
+      "id": "1",
+      "name": "React",
+      "user_id": "1"
+    },
+    {
+      "id": "2",
+      "name": "Ruby",
+      "user_id": "1"
+    },
+    {
+      "id": "3",
+      "name": "Rails",
+      "user_id": "1"
+    },
+    {
+      "id": 4,
+      "name": "Folder1"
+    },
+    {
+      "id": 5,
+      "name": "Folder2"
+    },
+    {
+      "id": 6,
+      "name": "Folder3"
+    },
+    {
+      "id": 7,
+      "name": "Folder4"
+    },
+    {
+      "id": 8,
+      "name": "Folder5"
+    },
+    {
+      "id": 9,
+      "name": "Folder6"
+    }
+  ]
 }
