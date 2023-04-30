@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import useFirebaseAuth from './useFirebaseAuth'
+import { useNavigate } from 'react-router-dom'
 import { FcGoogle } from 'react-icons/fc'
 
 export const handleAxiosError = (err) => {
@@ -25,6 +26,7 @@ export const handleAxiosError = (err) => {
 }
 
 const GoogleSignInButton = () => {
+    const navigate = useNavigate();
     const { loginWithGoogle } = useFirebaseAuth();
 
     const signInWithGoogleAndPostIdToken = async () => {
@@ -36,7 +38,8 @@ const GoogleSignInButton = () => {
         }
 
         try {
-            await axios.post('/auth', null, config)
+            await axios.post("http://localhost:3300/api/v1/auth", null, config)
+            navigate('/bookmarks');
             toast.success('ログインしました')
         } catch (error) {
             const errorMessage = handleAxiosError(error)
