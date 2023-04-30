@@ -1,11 +1,22 @@
+import { useNavigate } from 'react-router-dom'
 import { Navbar, Text, Dropdown, Avatar } from '@nextui-org/react'
+import { toast } from 'react-toastify'
+import useFirebaseAuth from './hooks/useFirebaseAuth'
 import NavbarBoards from './TopbarLink/navbarBoards'
 import NavbarBookmarks from './TopbarLink/navbarBookmarks'
 import NavbarCalender from './TopbarLink/navbarCalender'
 
 const TopBar = () => {
+    const navigate = useNavigate()
+    const { logout } = useFirebaseAuth()
+    const logoutHandler = async () => {
+        await logout()
+        navigate('/')
+        toast.success('Logout Successfully')
+    }
+
     return (
-        <Navbar variant="sticky" maxWidth="fluid" className='z-10'>
+        <Navbar variant="sticky" maxWidth="fluid" className="z-10">
             <div className="w-full flex justify-between items-center mx-24">
                 <p className="text-3xl font-oswald">ArtiClear</p>
                 <div className="flex justify-center items-center space-x-16 mr-28">
@@ -49,7 +60,7 @@ const TopBar = () => {
                             Help & Feedback
                         </Dropdown.Item>
                         <Dropdown.Item key="logout" withDivider color="error">
-                            Log Out
+                            <button onClick={logoutHandler} className="w-full">Logout</button>
                         </Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
