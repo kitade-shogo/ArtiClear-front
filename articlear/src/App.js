@@ -1,5 +1,5 @@
 import { createTheme, NextUIProvider } from '@nextui-org/react'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import './App.css'
 import RouterConfig from './config/RouterConfig'
 import MyFooter from './components/footer'
@@ -43,16 +43,16 @@ function App() {
                 pauseOnFocusLoss
                 draggable
                 pauseOnHover
-                theme='light'
+                theme="light"
             />
             <NextUIProvider theme={theme}>
                 <AuthContextProvider>
-                    <BrowserRouter>
+                    <Router>
                         <div className="bg-background2">
                             <RouterConfig />
                         </div>
                         <MyFooter />
-                    </BrowserRouter>
+                    </Router>
                 </AuthContextProvider>
             </NextUIProvider>
         </>

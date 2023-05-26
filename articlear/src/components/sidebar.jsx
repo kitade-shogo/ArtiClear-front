@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import { Button, Modal, Text, Input } from '@nextui-org/react'
+import { Button, Modal, Text, Input, config } from '@nextui-org/react'
 import axios from 'axios'
+import { useAuthContext } from './context/AuthContext'
 
 const Sidebar = () => {
     const [visible, setVisible] = useState(false)
@@ -9,24 +10,59 @@ const Sidebar = () => {
     const [folders, setFolders] = useState([])
 
     const handler = () => setVisible(true)
-    const closeHandler = () => { 
+    const closeHandler = () => {
         setVisible(false)
     }
-    const addHandler = () => {
-        axios.post('http://localhost:3100/folders', { id: folderCount + 1, name: folderName })
-        setFolderCount((prev) => prev + 1)
-        setVisible(false)
+    const addHandler = async () => {
+        try {
+            axios.post('http://localhost:3300/api/v1/folder', {
+            id: folderCount + 1,
+            name: folderName,
+        })
+            setFolderName('')
+            setVisible(false)
+        } catch (err) {
+            console.log(err)
+        }
     }
 
+    const { currentUser } = useAuthContext()
     useEffect(() => {
-        const getFolders = async () => {
-            const res = await axios.get('http://localhost:3100/folders')
-            setFolders(res.data)
-            setFolderCount(res.data.length)
-            console.log("aiueo")
-        }
-        getFolders()
-    }, [folderCount])
+        const setToken = async () => {
+            console.log('setTokenスタート')
+            // ここでtokenを取得
+            const token = await currentUser?.getIdToken()
+            const config = {
+                headers: { authorization: `Bearer ${token}` },
+            }
+            console.log(`setToken終了`)
+            return config
+        };
+
+        const getFolders = async (config) => {
+            console.log("getFoldersスタート")
+            try {
+                const res = await axios.get(
+                    'http://localhost:3300/api/v1/folders',
+                    config
+                )
+                setFolders(res.data)
+                setFolderCount(res.data.length)
+                console.log('getFolders終了')
+                console.log(folders)
+            } catch (err) {
+                console.log(err)
+            }
+        };
+
+        const fetchFolders = async () => {
+            const config = await setToken()
+            console.log('setToken実行')
+            getFolders(config)
+            console.log('getFolders実行')
+        };
+        fetchFolders()
+    }, [currentUser,folders])
 
     return (
         <>

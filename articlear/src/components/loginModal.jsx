@@ -13,7 +13,10 @@ const LoginModal = () => {
 
     return (
         <div>
-            <div className="flex justify-center hover:cursor-pointer" onClick={handler}>
+            <div
+                className="flex justify-center hover:cursor-pointer"
+                onClick={handler}
+            >
                 <p className="text-white text-center text-xl border-2 px-8 py-2 rounded-3xl hover:bg-textLowContrast">
                     Log in
                 </p>
@@ -26,10 +29,12 @@ const LoginModal = () => {
             >
                 <Modal.Header>
                     <Text id="modal-title" size={18}>
-                        ArtiClearは、技術記事の積読を解消するブックマーク管理サービスです。
+                        ArtiClearは、技術記事の積読を解消する
+                        <br />
+                        ブックマーク管理サービスです。
                     </Text>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body >
                     <GoogleSignInButton />
                 </Modal.Body>
                 <Modal.Footer>

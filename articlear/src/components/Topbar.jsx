@@ -5,6 +5,7 @@ import useFirebaseAuth from './hooks/useFirebaseAuth'
 import NavbarBoards from './TopbarLink/navbarBoards'
 import NavbarBookmarks from './TopbarLink/navbarBookmarks'
 import NavbarCalender from './TopbarLink/navbarCalender'
+import Logo from './img/logo.jpg'
 
 const TopBar = () => {
     const navigate = useNavigate()
@@ -18,7 +19,7 @@ const TopBar = () => {
     return (
         <Navbar variant="sticky" maxWidth="fluid" className="z-10">
             <div className="w-full flex justify-between items-center mx-24">
-                <p className="text-3xl font-oswald">ArtiClear</p>
+                <img alt='logo' src={Logo} className="w-48"/>
                 <div className="flex justify-center items-center space-x-16 mr-28">
                     <NavbarBookmarks />
                     <NavbarCalender />
