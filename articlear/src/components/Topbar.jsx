@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom'
 import { Navbar, Text, Dropdown, Avatar } from '@nextui-org/react'
 import { toast } from 'react-toastify'
 import useFirebaseAuth from './hooks/useFirebaseAuth'
-import NavbarBoards from './TopbarLink/navbarBoards'
 import NavbarBookmarks from './TopbarLink/navbarBookmarks'
 import NavbarCalender from './TopbarLink/navbarCalender'
 import Logo from './img/logo.jpg'
@@ -23,7 +22,6 @@ const TopBar = () => {
                 <div className="flex justify-center items-center space-x-16 mr-28">
                     <NavbarBookmarks />
                     <NavbarCalender />
-                    <NavbarBoards />
                 </div>
                 <Dropdown placement="bottom-right">
                     <Dropdown.Trigger>

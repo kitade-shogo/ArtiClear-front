@@ -1,4 +1,4 @@
-import { Link} from 'react-router-dom'
+import LoginModalWhite from "./loginModalWhite"
 
 const WhiteNavbar = () => {
     return (
@@ -10,11 +10,7 @@ const WhiteNavbar = () => {
                         Clear
                     </p>
                 </div>
-                <Link to="/bookmarks">
-                    <div className="bg-gradient-to-r to-borderInteractive from-textLowContrast flex justify-center rounded-3xl px-8 py-2">
-                        <p className="text-white text-center">ログイン</p>
-                    </div>
-                </Link>
+                <LoginModalWhite />
             </div>
         </>
     )

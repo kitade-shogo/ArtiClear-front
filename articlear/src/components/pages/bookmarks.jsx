@@ -45,7 +45,6 @@ const Bookmarks = () => {
 
     return (
         <>
-            <TopBar />
             <div className="container flex justfy-center mx-24 py-8 space-x-10">
                 <Sidebar folders={folders} setFolders={setFolders} />
                 <div className="w-full space-y-8">

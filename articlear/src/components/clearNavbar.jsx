@@ -1,4 +1,4 @@
-import LoginModal from "./loginModal"
+import LoginModal from './loginModal'
 
 const ClearNavbar = () => {
     return (
