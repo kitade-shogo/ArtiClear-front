@@ -8,20 +8,18 @@ import { useAuthContext } from '../context/AuthContext'
 
 const Bookmarks = () => {
     const [folders, setFolders] = useState([])
-    const [folderCount, setFolderCount] = useState(0)
 
     const { currentUser } = useAuthContext()
+    //tokenを取得する関数
+    const setToken = async () => {
+        const token = await currentUser?.getIdToken()
+        const config = {
+            headers: { authorization: `Bearer ${token}` },
+        }
+        return config
+    }
 
     useEffect(() => {
-        const setToken = async () => {
-            // ここでtokenを取得
-            const token = await currentUser?.getIdToken()
-            const config = {
-                headers: { authorization: `Bearer ${token}` },
-            }
-            return config
-        }
-
         const getFolders = async (config) => {
             try {
                 const res = await axios.get(
@@ -29,24 +27,27 @@ const Bookmarks = () => {
                     config
                 )
                 setFolders(res.data.data)
-                setFolderCount(res.data.length)
+                console.log(res.data.data.length)
             } catch (err) {
                 console.log(err)
             }
         }
 
+        //tokenを取得してからgetFoldersを実行する関数
         const fetchFolders = async () => {
             const config = await setToken()
             getFolders(config)
         }
+
         fetchFolders()
+        console.log('useEffect実行')
     }, [currentUser])
 
     return (
         <>
             <TopBar />
             <div className="container flex justfy-center mx-24 py-8 space-x-10">
-                <Sidebar folders={folders} setFolders={setFolders} folderCount={folderCount} setFolderCount={setFolderCount} />
+                <Sidebar folders={folders} setFolders={setFolders} />
                 <div className="w-full space-y-8">
                     <p className="text-3xl"> React の記事</p>
                     <div className="flex-cols h-144 overflow-y-auto">

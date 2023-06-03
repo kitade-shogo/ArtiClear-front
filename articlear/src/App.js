@@ -48,9 +48,7 @@ function App() {
             <NextUIProvider theme={theme}>
                 <AuthContextProvider>
                     <Router>
-                        <div className="bg-background2">
-                            <RouterConfig />
-                        </div>
+                        <RouterConfig />
                         <MyFooter />
                     </Router>
                 </AuthContextProvider>

@@ -1,27 +1,6 @@
-import { useState } from 'react'
-import { Button, Modal, Text, Input } from '@nextui-org/react'
-import axios from 'axios'
+import AddFolderButton from './addFolderButton'
 
-const Sidebar = ({ folders, folderCount }) => {
-    const [visible, setVisible] = useState(false)
-    const [folderName, setFolderName] = useState('')
-
-    const handler = () => setVisible(true)
-    const closeHandler = () => {
-        setVisible(false)
-    }
-    const addHandler = async () => {
-        try {
-            axios.post('http://localhost:3300/api/v1/folders', {
-            id: folderCount + 1,
-            name: folderName,
-        })
-            setFolderName('')
-            setVisible(false)
-        } catch (err) {
-            console.log(err)
-        }
-    }
+const Sidebar = ({ folders }) => {
 
     return (
         <>
@@ -44,49 +23,7 @@ const Sidebar = ({ folders, folderCount }) => {
                             )
                         })}
                         <li className="flex items-center p-2 rounded-lg">
-                            <Button ghost auto onPress={handler}>
-                                Add New Folder
-                            </Button>
-                            <Modal
-                                closeButton
-                                aria-labelledby="modal-title"
-                                open={visible}
-                                onClose={closeHandler}
-                            >
-                                <Modal.Header>
-                                    <Text id="modal-title" size={18}>
-                                        New
-                                    </Text>
-                                </Modal.Header>
-                                <Modal.Body>
-                                    <Input
-                                        clearable
-                                        bordered
-                                        fullWidth
-                                        color="primary"
-                                        size="lg"
-                                        placeholder="Folder Name"
-                                        aria-labelledby="Folder Name"
-                                        value={folderName}
-                                        onChange={(e) =>
-                                            setFolderName(e.target.value)
-                                        }
-                                    />
-                                </Modal.Body>
-                                <Modal.Footer>
-                                    <Button
-                                        auto
-                                        flat
-                                        color="error"
-                                        onPress={closeHandler}
-                                    >
-                                        Close
-                                    </Button>
-                                    <Button auto onPress={addHandler}>
-                                        Add
-                                    </Button>
-                                </Modal.Footer>
-                            </Modal>
+                            <AddFolderButton />
                         </li>
                     </ul>
                 </div>

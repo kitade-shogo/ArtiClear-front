@@ -6,7 +6,6 @@ import {
 import { Link } from 'react-router-dom' 
 import CheckedSentence from '../checkedSentence'
 import bgImage from '../img/sky.jpeg'
-import LoginBird from '../loginBird'
 import TopBar from '../topbarAnother'
 import LoginModal from '../loginModal'
 
@@ -25,7 +24,7 @@ const Top = () => {
                     <p className="text-2xl text-white font-semibold ml-8">
                         ArtiClear はプログラミング学習中の方を
                         <br />
-                        後押しするブックマーク管理・共有サービスです
+                        サポートするブックマーク管理サービスです
                     </p>
                     <div className="flex justify-center">
                         <LoginModal />
@@ -42,9 +41,6 @@ const Top = () => {
                     </p>
                     <p className="text-xl text-center">
                         「あとで読もうと思っていた記事をそのまま忘れてしまう」
-                    </p>
-                    <p className="text-xl text-center">
-                        「他の人がどのような記事を読んでいるのか気になる」
                     </p>
                     <p className="text-xl text-center">
                         ArtiClear
