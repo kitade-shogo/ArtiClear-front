@@ -1,9 +1,12 @@
+
 import { Routes, Route, Navigate } from 'react-router-dom'
 import useFirebaseAuth from '../components/hooks/useFirebaseAuth'
 import Bookmarks from '../components//pages/bookmarks'
 import Calender from '../components/pages/calender'
 import MyPage from '../components/pages/myPage'
 import Top from '../components/pages/top'
+import PrivacyPolicy from '../components/pages/privacyPolicy'
+import TermsOfService from '../components/pages/termsOfService'
 import { useAuthContext } from '../components/context/AuthContext'
 import TopBarLogin from '../components/topbar'
 import Topbar from '../components/topbarAnother'
@@ -22,9 +25,9 @@ const RouterConfig = () => {
 
     return (
         <>
-            { currentUser ? <TopBarLogin/> : <Topbar />  }
+            {currentUser ? <TopBarLogin /> : <Topbar />}
             <Routes>
-                <Route path="/" element={<LoginControll/>} />
+                <Route path="/" element={<LoginControll />} />
                 <Route
                     path="/bookmarks"
                     element={
@@ -49,6 +52,8 @@ const RouterConfig = () => {
                         </PrivateRoute>
                     }
                 />
+                <Route path="/privacy_policy" element={<PrivacyPolicy />} />
+                <Route path="/terms_of_service" element={<TermsOfService />} />
             </Routes>
         </>
     )

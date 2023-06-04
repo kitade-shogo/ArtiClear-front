@@ -2,7 +2,6 @@ import { Textarea, Button } from '@nextui-org/react'
 import { useEffect, useState } from 'react'
 import MyCard from '../card'
 import Sidebar from '../sidebar'
-import TopBar from '../topbar'
 import axios from 'axios'
 import { useAuthContext } from '../context/AuthContext'
 

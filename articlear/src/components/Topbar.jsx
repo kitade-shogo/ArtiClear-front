@@ -1,14 +1,16 @@
-import { useNavigate } from 'react-router-dom'
-import { Navbar, Text, Dropdown, Avatar } from '@nextui-org/react'
+import { useNavigate, Link } from 'react-router-dom'
+import { Navbar, Text, Dropdown, User, Badge } from '@nextui-org/react'
 import { toast } from 'react-toastify'
 import useFirebaseAuth from './hooks/useFirebaseAuth'
 import NavbarBookmarks from './TopbarLink/navbarBookmarks'
 import NavbarCalender from './TopbarLink/navbarCalender'
-import Logo from './img/logo.jpg'
+import Logo from './img/x.png'
+import { useAuthContext } from './context/AuthContext'
 
 const TopBar = () => {
     const navigate = useNavigate()
     const { logout } = useFirebaseAuth()
+    const { currentUser } = useAuthContext()
     const logoutHandler = async () => {
         await logout()
         navigate('/')
@@ -18,19 +20,30 @@ const TopBar = () => {
     return (
         <Navbar variant="sticky" maxWidth="fluid" className="z-10">
             <div className="w-full flex justify-between items-center mx-24">
-                <img alt='logo' src={Logo} className="w-48"/>
+                <Badge
+                    color="primary"
+                    size="md"
+                    content="BETA"
+                    verticalOffset="50%"
+                    horizontalOffset="-20%"
+                >
+                    <Link to="bookmarks">
+                        <img alt="logo" src={Logo} className="w-48" />
+                    </Link>
+                </Badge>
                 <div className="flex justify-center items-center space-x-16 mr-28">
                     <NavbarBookmarks />
                     <NavbarCalender />
                 </div>
                 <Dropdown placement="bottom-right">
                     <Dropdown.Trigger>
-                        <Avatar
-                            bordered
-                            as="button"
-                            color="secondary"
+                        <User
+                            name={currentUser.displayName}
+                            src={currentUser.photoURL}
                             size="md"
-                            src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+                            bordered
+                            color="primary"
+                            pointer
                         />
                     </Dropdown.Trigger>
                     <Dropdown.Menu
@@ -42,24 +55,22 @@ const TopBar = () => {
                                 Signed in as
                             </Text>
                             <Text b color="inherit" css={{ d: 'flex' }}>
-                                zoey@example.com
+                                {currentUser.email}
                             </Text>
                         </Dropdown.Item>
-                        <Dropdown.Item key="settings" withDivider>
-                            My Settings
+                        <Dropdown.Item key="about" withDivider>
+                            ArtiClearについて
                         </Dropdown.Item>
-                        <Dropdown.Item key="analytics" withDivider>
-                            Analytics
+                        <Dropdown.Item key="terms_of_service" withDivider>
+                            利用規約
                         </Dropdown.Item>
-                        <Dropdown.Item key="system">System</Dropdown.Item>
-                        <Dropdown.Item key="configurations">
-                            Configurations
-                        </Dropdown.Item>
-                        <Dropdown.Item key="help_and_feedback" withDivider>
-                            Help & Feedback
+                        <Dropdown.Item key="privacy_policy" withDivider>
+                            プライバシーポリシー
                         </Dropdown.Item>
                         <Dropdown.Item key="logout" withDivider color="error">
-                            <button onClick={logoutHandler} className="w-full">Logout</button>
+                            <button onClick={logoutHandler} className="w-full">
+                                Logout
+                            </button>
                         </Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
