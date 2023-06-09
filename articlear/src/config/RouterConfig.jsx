@@ -7,8 +7,8 @@ import Top from '../components/pages/top'
 import PrivacyPolicy from '../components/pages/privacyPolicy'
 import TermsOfService from '../components/pages/termsOfService'
 import { useAuthContext } from '../components/context/AuthContext'
-import TopBarLogin from '../components/topbar'
-import Topbar from '../components/topbarAnother'
+import TopBar from '../components/topbar'
+import TopbarAnother from '../components/topbarAnother'
 
 const PrivateRoute = ({ children, currentUser }) => {
     return currentUser ? children : <Navigate to="/" />
@@ -24,7 +24,7 @@ const RouterConfig = () => {
 
     return (
         <>
-            {currentUser ? <TopBarLogin /> : <Topbar />}
+            {currentUser ? <TopBar /> : <TopbarAnother />}
             <Routes>
                 <Route path="/" element={<LoginControll />} />
                 <Route
