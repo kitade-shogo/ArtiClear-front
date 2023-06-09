@@ -31,7 +31,7 @@ const TopBar = () => {
                         <img alt="logo" src={Logo} className="w-48" />
                     </Link>
                 </Badge>
-                <div className="flex justify-center items-center space-x-16 mr-28">
+                <div className="flex justify-center items-center space-x-16">
                     <NavbarBookmarks />
                     <NavbarCalender />
                 </div>

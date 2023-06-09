@@ -4,7 +4,6 @@ import {
 } from 'react-icons/md'
 import CheckedSentence from '../checkedSentence'
 import bgImage from '../img/sky.jpeg'
-import TopBar from '../topbarAnother'
 import LoginModal from '../loginModal'
 
 const Top = () => {

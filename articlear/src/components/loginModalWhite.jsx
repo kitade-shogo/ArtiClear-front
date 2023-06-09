@@ -17,7 +17,7 @@ const LoginModalWhite = () => {
                 className="flex justify-center hover:cursor-pointer"
                 onClick={handler}
             >
-                <p className="text-white text-center text-xl px-8 py-2 rounded-3xl hover:bg-textLowContrast bg-gradient-to-r to-borderInteractive from-textLowContrast">
+                <p className="text-textLowContrast text-center text-xl font-semibold px-8 py-2 rounded-3xl border-2 border-textLowContrast">
                     Log in
                 </p>
             </div>

@@ -106,7 +106,7 @@ const Bookmarks = () => {
                                                 bookmark.id === confirmDeleteId
                                             return (
                                                 <div
-                                                    className="px-4 py-4 w-full border-2 rounded-xl flex-col space-y-2 bg-background2 hover:bg-gradient-to-r from-componentBackgroundSelected to-background1 mb-2 hover:cursor-default"
+                                                    className="px-4 py-4 w-full border-2 border-border rounded-xl flex-col space-y-2 bg-background2 hover:bg-gradient-to-r from-componentBackgroundSelected to-background1 mb-2 hover:cursor-default"
                                                     key={bookmark.id}
                                                 >
                                                     <div className="flex items-center">
