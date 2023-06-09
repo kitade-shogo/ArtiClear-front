@@ -1,5 +1,6 @@
 import React from 'react';
-import { Navbar, Badge, Link } from '@nextui-org/react';
+import { Navbar, Badge } from '@nextui-org/react';
+import { Link } from 'react-router-dom'; 
 import Logo from './img/x.png'
 import LoginModalWhite from './loginModalWhite';
 
@@ -16,7 +17,7 @@ const Topbar = () => {
                         verticalOffset="50%"
                         horizontalOffset="-20%"
                     >
-                        <Link to="bookmarks">
+                        <Link to="/">
                             <img alt="logo" src={Logo} className="w-48" />
                         </Link>
                     </Badge>

@@ -27,7 +27,7 @@ const TopBar = () => {
                     verticalOffset="50%"
                     horizontalOffset="-20%"
                 >
-                    <Link to="bookmarks">
+                    <Link to="/bookmarks">
                         <img alt="logo" src={Logo} className="w-48" />
                     </Link>
                 </Badge>
@@ -50,7 +50,7 @@ const TopBar = () => {
                         aria-label="User menu actions"
                         color="secondary"
                     >
-                        <Dropdown.Item key="profile" css={{ height: '$18' }}>
+                        <Dropdown.Item key="profile" css={{ height: '$18' }} textValue='profile'>
                             <Text b color="inherit" css={{ d: 'flex' }}>
                                 Signed in as
                             </Text>
@@ -58,16 +58,15 @@ const TopBar = () => {
                                 {currentUser.email}
                             </Text>
                         </Dropdown.Item>
-                        <Dropdown.Item key="about" withDivider>
-                            ArtiClearについて
+                        <Dropdown.Item key="terms_of_service" withDivider textValue='terms_of_service'>
+                            <Link to="terms_of_service">利用規約</Link>
                         </Dropdown.Item>
-                        <Dropdown.Item key="terms_of_service" withDivider>
-                            利用規約
+                        <Dropdown.Item key="privacy_policy" withDivider textValue='privacy_policy'>
+                            <Link to="/privacy_policy">
+                                プライバシーポリシー
+                            </Link>
                         </Dropdown.Item>
-                        <Dropdown.Item key="privacy_policy" withDivider>
-                            プライバシーポリシー
-                        </Dropdown.Item>
-                        <Dropdown.Item key="logout" withDivider color="error">
+                        <Dropdown.Item key="logout" withDivider color="error" textValue='logout'>
                             <button onClick={logoutHandler} className="w-full">
                                 Logout
                             </button>

@@ -1,6 +1,5 @@
 
 import { Routes, Route, Navigate } from 'react-router-dom'
-import useFirebaseAuth from '../components/hooks/useFirebaseAuth'
 import Bookmarks from '../components//pages/bookmarks'
 import Calender from '../components/pages/calender'
 import MyPage from '../components/pages/myPage'
@@ -21,7 +20,7 @@ const LoginControll = () => {
 }
 
 const RouterConfig = () => {
-    const { currentUser } = useFirebaseAuth()
+    const { currentUser } = useAuthContext()
 
     return (
         <>

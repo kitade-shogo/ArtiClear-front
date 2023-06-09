@@ -6,6 +6,8 @@ import MyFooter from './components/footer'
 import { AuthContextProvider } from './components/context/AuthContext'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { FolderContextProvider } from './components/context/FolderContext'
+import { BookmarkContextProvider } from './components/context/BookmarkContext'
 
 const theme = createTheme({
     type: 'light', // it could be "light" or "dark"
@@ -26,7 +28,7 @@ const theme = createTheme({
             textHighContrast: '#003242',
         },
         space: {},
-        fonts: {},
+        fonts: { oswald: ['Oswald', 'sans-serif'] },
     },
 })
 
@@ -47,10 +49,14 @@ function App() {
             />
             <NextUIProvider theme={theme}>
                 <AuthContextProvider>
-                    <Router>
-                        <RouterConfig />
-                        <MyFooter />
-                    </Router>
+                    <FolderContextProvider>
+                        <BookmarkContextProvider>
+                            <Router>
+                                <RouterConfig />
+                                <MyFooter />
+                            </Router>
+                        </BookmarkContextProvider>
+                    </FolderContextProvider>
                 </AuthContextProvider>
             </NextUIProvider>
         </>

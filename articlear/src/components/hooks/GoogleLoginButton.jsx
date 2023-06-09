@@ -38,7 +38,7 @@ const GoogleSignInButton = () => {
         }
 
         try {
-            await axios.post("http://localhost:3300/api/v1/auth", null, config)
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/auth`, null, config)
             navigate('/bookmarks');
             toast.success('ログインしました')
         } catch (error) {
