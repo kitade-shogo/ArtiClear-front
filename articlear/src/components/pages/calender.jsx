@@ -1,7 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
-import { useAuthContext } from '../context/AuthContext'
 import { useBookmarkContext } from '../context/BookmarkContext'
 
 const Calender = () => {
