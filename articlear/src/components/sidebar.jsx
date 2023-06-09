@@ -1,99 +1,87 @@
-import { useEffect, useState } from 'react'
-import { Button, Modal, Text, Input } from '@nextui-org/react'
-import axios from 'axios'
+import { useState } from 'react'
+import { useFolderContext } from './context/FolderContext'
+import AddFolderButton from './addFolderButton'
+import {
+    MdFolderOpen,
+    MdFolder,
+    MdDelete,
+    MdCheck,
+    MdClear,
+} from 'react-icons/md'
 
-const Sidebar = () => {
-    const [visible, setVisible] = useState(false)
-    const [folderCount, setFolderCount] = useState(0)
-    const [folderName, setFolderName] = useState('')
-    const [folders, setFolders] = useState([])
+const Sidebar = ({ folders, selectFolder, selectedFolder }) => {
+    const [confirmDelete, setConfirmDelete] = useState(false)
+    const { deleteFolder } = useFolderContext()
 
-    const handler = () => setVisible(true)
-    const closeHandler = () => { 
-        setVisible(false)
-    }
-    const addHandler = () => {
-        axios.post('http://localhost:3100/folders', { id: folderCount + 1, name: folderName })
-        setFolderCount((prev) => prev + 1)
-        setVisible(false)
-    }
-
-    useEffect(() => {
-        const getFolders = async () => {
-            const res = await axios.get('http://localhost:3100/folders')
-            setFolders(res.data)
-            setFolderCount(res.data.length)
-            console.log("aiueo")
+    const handleDeleteFolder = async (folderID) => {
+        try {
+            await deleteFolder(folderID)
+            setConfirmDelete(false)
+        } catch (error) {
+            console.error('Failed to delete folder: ', error)
         }
-        getFolders()
-    }, [folderCount])
+    }
 
     return (
         <>
             <aside
                 id="default-sidebar"
-                className="w-64 h-full rounded-lg mt-14"
+                className="w-64 h-full rounded-lg"
                 aria-label="Sidebar"
             >
                 <div className="h-full px-1 py-2 overflow-y-auto">
-                    <p className="text-xl font-semibold pl-3">Folders</p>
-                    <ul className="space-y-2 font-medium">
-                        {folders.map((folder) => {
-                            return (
-                                <li
-                                    key={folder.id}
-                                    className="flex  items-center p-2 rounded-lg  hover:bg-componentBackgroundHover"
-                                >
-                                    {folder.name}
-                                </li>
-                            )
-                        })}
-                        <li className="flex items-center p-2 rounded-lg">
-                            <Button ghost auto onPress={handler}>
-                                Add New Folder
-                            </Button>
-                            <Modal
-                                closeButton
-                                aria-labelledby="modal-title"
-                                open={visible}
-                                onClose={closeHandler}
+                    <p className="text-2xl font-semibold mb-2">Folders</p>
+                    {folders.map((folder) => {
+                        const isSelected =
+                            selectedFolder && folder.id === selectedFolder.id
+                        return (
+                            <div
+                                key={folder.id}
+                                className={`flex border-l-2 justify-between items-center p-2 rounded-none  hover:bg-gray-200 hover:cursor-pointer ${
+                                    isSelected
+                                        ? 'border-sky10 font-semibold text-sky10'
+                                        : ''
+                                }`}
+                                onClick={() => selectFolder(folder)}
                             >
-                                <Modal.Header>
-                                    <Text id="modal-title" size={18}>
-                                        New
-                                    </Text>
-                                </Modal.Header>
-                                <Modal.Body>
-                                    <Input
-                                        clearable
-                                        bordered
-                                        fullWidth
-                                        color="primary"
-                                        size="lg"
-                                        placeholder="Folder Name"
-                                        aria-labelledby="Folder Name"
-                                        value={folderName}
-                                        onChange={(e) =>
-                                            setFolderName(e.target.value)
-                                        }
-                                    />
-                                </Modal.Body>
-                                <Modal.Footer>
-                                    <Button
-                                        auto
-                                        flat
-                                        color="error"
-                                        onPress={closeHandler}
-                                    >
-                                        Close
-                                    </Button>
-                                    <Button auto onPress={addHandler}>
-                                        Add
-                                    </Button>
-                                </Modal.Footer>
-                            </Modal>
-                        </li>
-                    </ul>
+                                <div className="flex justify-between items-center">
+                                    {isSelected ? (
+                                        <MdFolder className="mr-2" />
+                                    ) : (
+                                        <MdFolderOpen className="mr-2" />
+                                    )}
+                                    {folder.attributes.name}
+                                </div>
+                                {isSelected ? (
+                                    confirmDelete ? (
+                                        <div className="flex space-x-2">
+                                            <MdCheck
+                                                onClick={() =>
+                                                    handleDeleteFolder(
+                                                        folder.id
+                                                    )
+                                                }
+                                            />
+                                            <MdClear
+                                                onClick={() =>
+                                                    setConfirmDelete(false)
+                                                }
+                                            />
+                                        </div>
+                                    ) : (
+                                        <MdDelete
+                                            onClick={() =>
+                                                setConfirmDelete(true)
+                                            }
+                                        />
+                                    )
+                                ) : (
+                                    ''
+                                )}
+                            </div>
+                        )
+                    })}
+                    <AddFolderButton />
                 </div>
             </aside>
         </>

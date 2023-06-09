@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react'
 import useFirebaseAuth from '../hooks/useFirebaseAuth'
 
-export const AuthContext = createContext()
+export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
     const { currentUser, loading, loginWithGoogle, logout } = useFirebaseAuth()
@@ -15,4 +15,4 @@ export const AuthContextProvider = ({ children }) => {
     )
 }
 
-export const useAuth = () => useContext(AuthContext)
+export const useAuthContext = () => useContext(AuthContext)

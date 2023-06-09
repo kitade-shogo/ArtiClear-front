@@ -1,11 +1,13 @@
 import { createTheme, NextUIProvider } from '@nextui-org/react'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import './App.css'
 import RouterConfig from './config/RouterConfig'
 import MyFooter from './components/footer'
 import { AuthContextProvider } from './components/context/AuthContext'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { FolderContextProvider } from './components/context/FolderContext'
+import { BookmarkContextProvider } from './components/context/BookmarkContext'
 
 const theme = createTheme({
     type: 'light', // it could be "light" or "dark"
@@ -26,7 +28,7 @@ const theme = createTheme({
             textHighContrast: '#003242',
         },
         space: {},
-        fonts: {},
+        fonts: { oswald: ['Oswald', 'sans-serif'] },
     },
 })
 
@@ -43,16 +45,18 @@ function App() {
                 pauseOnFocusLoss
                 draggable
                 pauseOnHover
-                theme='light'
+                theme="light"
             />
             <NextUIProvider theme={theme}>
                 <AuthContextProvider>
-                    <BrowserRouter>
-                        <div className="bg-background2">
-                            <RouterConfig />
-                        </div>
-                        <MyFooter />
-                    </BrowserRouter>
+                    <FolderContextProvider>
+                        <BookmarkContextProvider>
+                            <Router>
+                                <RouterConfig />
+                                <MyFooter />
+                            </Router>
+                        </BookmarkContextProvider>
+                    </FolderContextProvider>
                 </AuthContextProvider>
             </NextUIProvider>
         </>

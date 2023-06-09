@@ -38,7 +38,7 @@ const GoogleSignInButton = () => {
         }
 
         try {
-            await axios.post("http://localhost:3300/api/v1/auth", null, config)
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/auth`, null, config)
             navigate('/bookmarks');
             toast.success('ログインしました')
         } catch (error) {
@@ -51,7 +51,7 @@ const GoogleSignInButton = () => {
     return (
         <button
             onClick={signInWithGoogleAndPostIdToken}
-            className="bg-white text-gray-600 px-4 py-2 rounded-md flex items-center cursor-pointer text-center"
+            className="bg-white text-gray-600 mx-auto px-4 py-2 rounded-md flex items-center cursor-pointer text-center border-2"
         >
             <FcGoogle />
             Sign in with Google

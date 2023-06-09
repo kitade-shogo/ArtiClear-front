@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Modal, Text } from '@nextui-org/react'
 import GoogleSignInButton from './hooks/GoogleLoginButton'
 
-const LoginModal = () => {
+const LoginModalWhite = () => {
     const [visible, setVisible] = useState(false)
     const handler = () => setVisible(true)
 
@@ -17,7 +17,7 @@ const LoginModal = () => {
                 className="flex justify-center hover:cursor-pointer"
                 onClick={handler}
             >
-                <p className="text-white text-center text-xl border-2 px-8 py-2 rounded-3xl hover:bg-textLowContrast">
+                <p className="text-textLowContrast text-center text-xl font-semibold px-8 py-2 rounded-3xl border-2 border-textLowContrast">
                     Log in
                 </p>
             </div>
@@ -34,7 +34,7 @@ const LoginModal = () => {
                         ブックマーク管理サービスです。
                     </Text>
                 </Modal.Header>
-                <Modal.Body >
+                <Modal.Body>
                     <GoogleSignInButton />
                 </Modal.Body>
                 <Modal.Footer>
@@ -47,4 +47,4 @@ const LoginModal = () => {
     )
 }
 
-export default LoginModal
+export default LoginModalWhite

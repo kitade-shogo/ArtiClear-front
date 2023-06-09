@@ -1,19 +1,14 @@
 import {
     MdBookmarkAdd,
-    MdOutlineNotificationsActive,
-    MdShare,
+    MdOutlineNotificationsActive
 } from 'react-icons/md'
-import { Link } from 'react-router-dom' 
 import CheckedSentence from '../checkedSentence'
 import bgImage from '../img/sky.jpeg'
-import LoginBird from '../loginBird'
-import TopBar from '../topbarAnother'
 import LoginModal from '../loginModal'
 
 const Top = () => {
     return (
         <>
-            <TopBar />
             <div
                 className="bg-fixed bg-cover flex justify-start items-center h-screen py-32 px-24"
                 style={{ backgroundImage: `url(${bgImage})` }}
@@ -25,7 +20,7 @@ const Top = () => {
                     <p className="text-2xl text-white font-semibold ml-8">
                         ArtiClear はプログラミング学習中の方を
                         <br />
-                        後押しするブックマーク管理・共有サービスです
+                        サポートするブックマーク管理サービスです
                     </p>
                     <div className="flex justify-center">
                         <LoginModal />
@@ -42,9 +37,6 @@ const Top = () => {
                     </p>
                     <p className="text-xl text-center">
                         「あとで読もうと思っていた記事をそのまま忘れてしまう」
-                    </p>
-                    <p className="text-xl text-center">
-                        「他の人がどのような記事を読んでいるのか気になる」
                     </p>
                     <p className="text-xl text-center">
                         ArtiClear
@@ -106,33 +98,6 @@ const Top = () => {
                                     通知機能のご利用にはLINEアカウントの連携が必要です
                                     )
                                 </p>
-                            </div>
-                        </div>
-                        <div className="flex-cols justify-center bg-componentBackgroundSelected rounded-xl px-4 py-4 w-96">
-                            <div className="flex justify-start items-center space-x-4">
-                                <MdShare className="text-7xl text-textLowContrast" />
-                                <p className="text-borderHover font-bold text-3xl ml-2">
-                                    Share
-                                </p>
-                            </div>
-                            <div className="flex-cols justify-center items-center mx-2 my-8 space-y-4">
-                                <CheckedSentence
-                                    sentence={
-                                        '自分のブックマークにコメントをつけて他のユーザーと共有'
-                                    }
-                                />
-                                <CheckedSentence
-                                    sentence={
-                                        '他のユーザーがどのような記事を読んでいるのか確認可能'
-                                    }
-                                />
-                            </div>
-                            <div className="mt-24">
-                                <Link to="/boards">
-                                    <p className="text-black font-normal hover:text-my-gray text-center">
-                                        投稿を見てみる →
-                                    </p>
-                                </Link>
                             </div>
                         </div>
                     </div>

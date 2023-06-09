@@ -1,23 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import ClearNavbar from './clearNavbar';
-import WhiteNavbar from './whiteNavbar';
+import React from 'react';
+import { Navbar, Badge } from '@nextui-org/react';
+import { Link } from 'react-router-dom'; 
+import Logo from './img/x.png'
+import LoginModalWhite from './loginModalWhite';
 
 const Topbar = () => {
-    const [isWhite, setIsWhite] = useState(false)
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const position = window.pageYOffset
-            const targetPosition = 120 // 表示させたい位置
-            setIsWhite(position >= targetPosition)
-        }
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, []);
 
     return (
         <>
-            {isWhite ? <WhiteNavbar /> : <ClearNavbar />}
+            <Navbar variant="sticky" maxWidth="fluid">
+                <div className="w-full flex justify-between items-center mx-24">
+                    <Badge
+                        color="primary"
+                        size="md"
+                        content="BETA"
+                        verticalOffset="50%"
+                        horizontalOffset="-20%"
+                    >
+                        <Link to="/">
+                            <img alt="logo" src={Logo} className="w-48" />
+                        </Link>
+                    </Badge>
+                    <LoginModalWhite />
+                </div>
+            </Navbar>
         </>
     )
 }
