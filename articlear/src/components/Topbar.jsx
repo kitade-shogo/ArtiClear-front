@@ -1,7 +1,6 @@
 import { useNavigate, Link } from 'react-router-dom'
 import { Navbar, Text, Dropdown, User, Badge } from '@nextui-org/react'
 import { toast } from 'react-toastify'
-import useFirebaseAuth from './hooks/useFirebaseAuth'
 import NavbarBookmarks from './TopbarLink/navbarBookmarks'
 import NavbarCalender from './TopbarLink/navbarCalender'
 import Logo from './img/x.png'
@@ -9,8 +8,7 @@ import { useAuthContext } from './context/AuthContext'
 
 const TopBar = () => {
     const navigate = useNavigate()
-    const { logout } = useFirebaseAuth()
-    const { currentUser } = useAuthContext()
+    const { currentUser, logout } = useAuthContext()
     const logoutHandler = async () => {
         await logout()
         navigate('/')
