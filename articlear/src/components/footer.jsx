@@ -6,15 +6,20 @@ const MyFooter = () => {
             <footer className="bottom-0 left-0 z-20 w-full p-4 bg-componentBackgroundSelected md:flex md:items-center md:justify-between md:p-6 ">
                 <span className="text-sm text-gray-500 sm:text-center">
                     © 2023{' '}
-                    <Link
-                        to="/"
-                        className="hover:underline"
-                    >
+                    <Link to="/" className="hover:underline">
                         ArtiClear
                     </Link>
-                     . All Rights Reserved.
+                    . All Rights Reserved.
                 </span>
                 <ul className="flex items-center mt-3 text-sm font-medium text-gray-500  sm:mt-0">
+                    <li>
+                        <Link
+                            to="/how_to_use"
+                            className="mr-4 hover:underline md:mr-6"
+                        >
+                            使い方
+                        </Link>
+                    </li>
                     <li>
                         <Link
                             to="/privacy_policy"
