@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Modal, Text } from '@nextui-org/react'
 import GoogleSignInButton from './hooks/GoogleLoginButton'
 
@@ -14,10 +15,10 @@ const LoginModalWhite = () => {
     return (
         <div>
             <div
-                className="flex justify-center hover:cursor-pointer"
+                className="flex justify-center hover:cursor-pointer hover:bg-textLowContrast rounded-3xl border-2 border-textLowContrast"
                 onClick={handler}
             >
-                <p className="text-textLowContrast text-center text-xl font-semibold px-8 py-2 rounded-3xl border-2 border-textLowContrast">
+                <p className="text-textLowContrast hover:text-white text-center text-xl font-semibold px-8 py-2 ">
                     Log in
                 </p>
             </div>
@@ -39,7 +40,22 @@ const LoginModalWhite = () => {
                 </Modal.Body>
                 <Modal.Footer>
                     <p>
-                        利用規約、プライバシーポリシーに同意してログインしてください。
+                        <Link
+                            to="/terms_of_service"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            利用規約
+                        </Link>
+                        、
+                        <Link
+                            to="privacy_policy"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            プライバシーポリシー
+                        </Link>
+                        に同意してログインしてください。
                     </p>
                 </Modal.Footer>
             </Modal>
