@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from '@nextui-org/react'
 import step1Image from '../img/ArtiClear&Chrome.png'
 import step2Image from '../img/folderCreate.png'
 import step3Gif from '../img/5a7375403ba1b148f5ab017710d85331.gif'
@@ -81,6 +82,19 @@ const HowToUse = () => {
                         </div>
                     </div>
                     <div className="w-full mx-6 my-auto">{renderImage()}</div>
+                </div>
+            </div>
+            <div className="flex justify-center pt-20 space-x-20">
+                <div className="flex justify-center">
+                    <Link
+                        href="https://chrome.google.com/webstore/detail/articlear-chromeextension/bflmbecdlbonjancnhafkkpepmfgpkke?hl=ja&authuser=0"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <p className="text-white text-center text-lg bg-gradient-to-r to-borderInteractive from-textLowContrast px-8 py-2 rounded-3xl">
+                            拡張機能はこちら
+                        </p>
+                    </Link>
                 </div>
             </div>
             <p className="text-center text-lg mt-10">
