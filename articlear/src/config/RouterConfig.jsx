@@ -6,6 +6,7 @@ import MyPage from '../components/pages/myPage'
 import Top from '../components/pages/top'
 import PrivacyPolicy from '../components/pages/privacyPolicy'
 import TermsOfService from '../components/pages/termsOfService'
+import HowToUse from '../components/pages/howToUse'
 import { useAuthContext } from '../components/context/AuthContext'
 import Navbar from '../components/navbar'
 import NavbarLogin from '../components/navbarLogin'
@@ -53,6 +54,7 @@ const RouterConfig = () => {
                 />
                 <Route path="/privacy_policy" element={<PrivacyPolicy />} />
                 <Route path="/terms_of_service" element={<TermsOfService />} />
+                <Route path="/how_to_use" element={<HowToUse/>} />
             </Routes>
         </>
     )

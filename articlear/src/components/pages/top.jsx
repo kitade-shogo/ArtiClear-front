@@ -248,7 +248,7 @@ const Top = () => {
                                 onMouseLeave={() => setHoveredArea(null)}
                             >
                                 <p className="text-xl font-semibold">
-                                    4. HappyHacking
+                                    4. 記事を読む
                                 </p>
                                 <p>
                                     アプリ本体でいつでもブックマークを確認できます。「READ
