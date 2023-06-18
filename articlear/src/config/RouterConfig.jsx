@@ -1,4 +1,3 @@
-
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Bookmarks from '../components//pages/bookmarks'
 import Calender from '../components/pages/calender'
@@ -10,6 +9,7 @@ import HowToUse from '../components/pages/howToUse'
 import { useAuthContext } from '../components/context/AuthContext'
 import Navbar from '../components/navbar'
 import NavbarLogin from '../components/navbarLogin'
+import { Loading } from '@nextui-org/react'
 
 const PrivateRoute = ({ children, currentUser }) => {
     return currentUser ? children : <Navigate to="/" />
@@ -21,41 +21,50 @@ const LoginControll = () => {
 }
 
 const RouterConfig = () => {
-    const { currentUser } = useAuthContext()
+    const { currentUser, loading } = useAuthContext()
 
     return (
         <>
             {currentUser ? <Navbar /> : <NavbarLogin />}
-            <Routes>
-                <Route path="/" element={<LoginControll />} />
-                <Route
-                    path="/bookmarks"
-                    element={
-                        <PrivateRoute currentUser={currentUser}>
-                            <Bookmarks />
-                        </PrivateRoute>
-                    }
-                />
-                <Route
-                    path="/calender"
-                    element={
-                        <PrivateRoute currentUser={currentUser}>
-                            <Calender />
-                        </PrivateRoute>
-                    }
-                />
-                <Route
-                    path="/mypage"
-                    element={
-                        <PrivateRoute currentUser={currentUser}>
-                            <MyPage />
-                        </PrivateRoute>
-                    }
-                />
-                <Route path="/privacy_policy" element={<PrivacyPolicy />} />
-                <Route path="/terms_of_service" element={<TermsOfService />} />
-                <Route path="/how_to_use" element={<HowToUse/>} />
-            </Routes>
+            {loading ? (
+                <div className='flex justify-center'>
+                    <Loading size="xl" />
+                </div>
+            ) : (
+                <Routes>
+                    <Route path="/" element={<LoginControll />} />
+                    <Route
+                        path="/bookmarks"
+                        element={
+                            <PrivateRoute currentUser={currentUser}>
+                                <Bookmarks />
+                            </PrivateRoute>
+                        }
+                    />
+                    <Route
+                        path="/calender"
+                        element={
+                            <PrivateRoute currentUser={currentUser}>
+                                <Calender />
+                            </PrivateRoute>
+                        }
+                    />
+                    <Route
+                        path="/mypage"
+                        element={
+                            <PrivateRoute currentUser={currentUser}>
+                                <MyPage />
+                            </PrivateRoute>
+                        }
+                    />
+                    <Route path="/privacy_policy" element={<PrivacyPolicy />} />
+                    <Route
+                        path="/terms_of_service"
+                        element={<TermsOfService />}
+                    />
+                    <Route path="/how_to_use" element={<HowToUse />} />
+                </Routes>
+            )}
         </>
     )
 }
