@@ -30,7 +30,7 @@ const MyFooter = () => {
                     </li>
                     <li>
                         <Link
-                            to="terms_of_service"
+                            to="/terms_of_service"
                             className="mr-4 hover:underline md:mr-6"
                         >
                             利用規約
