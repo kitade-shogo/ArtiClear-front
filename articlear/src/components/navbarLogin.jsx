@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Logo from './img/x.png'
 import LoginModalWhite from './loginModalWhite';
 
-const TopbarAnother = () => {
+const NavbarAnother = () => {
 
     return (
         <>
@@ -28,4 +28,4 @@ const TopbarAnother = () => {
     )
 }
 
-export default TopbarAnother;
+export default NavbarAnother;
