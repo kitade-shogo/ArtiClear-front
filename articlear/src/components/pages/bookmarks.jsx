@@ -67,12 +67,10 @@ const Bookmarks = () => {
     useEffect(() => {
         fetchFolders()
         fetchBookmarks()
-        console.log('useEffect1実行')
     }, [currentUser])
 
     useEffect(() => {
         filterBookmark()
-        console.log('useEffect2実行')
     }, [selectedFolder,bookmarks])
 
     return (
@@ -99,7 +97,7 @@ const Bookmarks = () => {
                                         selectedFolder.attributes.name}{' '}
                                     のBookmark
                                 </p>
-                                <div className="flex-cols h-144 overflow-y-auto">
+                                <div className="flex-cols h-144 overflow-y-auto mt-6">
                                     {filteredBookmarks.length !== 0 ? (
                                         filteredBookmarks.map((bookmark) => {
                                             const isDeleting =
