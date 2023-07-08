@@ -1,5 +1,5 @@
-import { useNavigate, Link } from 'react-router-dom'
-import { Navbar, Text, Dropdown, User, Badge } from '@nextui-org/react'
+import { useNavigate } from 'react-router-dom'
+import { Navbar, Text, Dropdown, User, Badge, Link } from '@nextui-org/react'
 import { toast } from 'react-toastify'
 import NavbarBookmarks from './TopbarLink/navbarBookmarks'
 import NavbarCalender from './TopbarLink/navbarCalender'
@@ -33,68 +33,82 @@ const NavBar = () => {
                     <NavbarBookmarks />
                     <NavbarCalender />
                 </div>
-                <Dropdown placement="bottom-right">
-                    <Dropdown.Trigger>
-                        <User
-                            name={currentUser.displayName}
-                            src={currentUser.photoURL}
-                            size="md"
-                            bordered
-                            color="primary"
-                            pointer
-                        />
-                    </Dropdown.Trigger>
-                    <Dropdown.Menu
-                        aria-label="User menu actions"
-                        color="secondary"
+                <div className='flex justify-between items-center'>
+                    <Link
+                        href="https://chrome.google.com/webstore/detail/articlear-chromeextension/bflmbecdlbonjancnhafkkpepmfgpkke?hl=ja&authuser=0"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
-                        <Dropdown.Item
-                            key="profile"
-                            css={{ height: '$18' }}
-                            textValue="profile"
+                        <p className="text-white text-center text-sm bg-gradient-to-r to-borderInteractive from-textLowContrast px-6 py-2 rounded-3xl">
+                            拡張機能はこちら
+                        </p>
+                    </Link>
+                    <Dropdown placement="bottom-right">
+                        <Dropdown.Trigger>
+                            <User
+                                name={currentUser.displayName}
+                                src={currentUser.photoURL}
+                                size="md"
+                                bordered
+                                color="primary"
+                                pointer
+                            />
+                        </Dropdown.Trigger>
+                        <Dropdown.Menu
+                            aria-label="User menu actions"
+                            color="secondary"
                         >
-                            <Text b color="inherit" css={{ d: 'flex' }}>
-                                Signed in as
-                            </Text>
-                            <Text b color="inherit" css={{ d: 'flex' }}>
-                                {currentUser.email}
-                            </Text>
-                        </Dropdown.Item>
-                        <Dropdown.Item
-                            key="how_to_use"
-                            withDivider
-                            textValue="how_to_use"
-                        >
-                            <Link to="/how_to_use">How to Use</Link>
-                        </Dropdown.Item>
-                        <Dropdown.Item
-                            key="terms_of_service"
-                            withDivider
-                            textValue="terms_of_service"
-                        >
-                            <Link to="terms_of_service">利用規約</Link>
-                        </Dropdown.Item>
-                        <Dropdown.Item
-                            key="privacy_policy"
-                            withDivider
-                            textValue="privacy_policy"
-                        >
-                            <Link to="/privacy_policy">
-                                プライバシーポリシー
-                            </Link>
-                        </Dropdown.Item>
-                        <Dropdown.Item
-                            key="logout"
-                            withDivider
-                            color="error"
-                            textValue="logout"
-                        >
-                            <button onClick={logoutHandler} className="w-full">
-                                Logout
-                            </button>
-                        </Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+                            <Dropdown.Item
+                                key="profile"
+                                css={{ height: '$18' }}
+                                textValue="profile"
+                            >
+                                <Text b color="inherit" css={{ d: 'flex' }}>
+                                    Signed in as
+                                </Text>
+                                <Text b color="inherit" css={{ d: 'flex' }}>
+                                    {currentUser.email}
+                                </Text>
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                                key="how_to_use"
+                                withDivider
+                                textValue="how_to_use"
+                            >
+                                <Link to="/how_to_use">How to Use</Link>
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                                key="terms_of_service"
+                                withDivider
+                                textValue="terms_of_service"
+                            >
+                                <Link to="terms_of_service">利用規約</Link>
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                                key="privacy_policy"
+                                withDivider
+                                textValue="privacy_policy"
+                            >
+                                <Link to="/privacy_policy">
+                                    プライバシーポリシー
+                                </Link>
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                                key="logout"
+                                withDivider
+                                color="error"
+                                textValue="logout"
+                            >
+                                <button
+                                    onClick={logoutHandler}
+                                    className="w-full"
+                                >
+                                    Logout
+                                </button>
+                            </Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                </div>
             </div>
         </Navbar>
     )
